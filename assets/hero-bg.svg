@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ocean depth with light rays">
+  <defs>
+    <linearGradient id="ocean" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0E2436"/>
+      <stop offset="35%" stop-color="#1A4A6B"/>
+      <stop offset="70%" stop-color="#0D3550"/>
+      <stop offset="100%" stop-color="#061626"/>
+    </linearGradient>
+    <linearGradient id="ray" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#4FC3D7" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#4FC3D7" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#4FC3D7" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vignette" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#1A8FA8" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#0E2436" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.45"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Ocean depth -->
+  <rect width="1920" height="900" fill="url(#ocean)"/>
+
+  <!-- Light rays piercing the water -->
+  <g opacity="0.7">
+    <polygon points="540,0 660,0 820,900 700,900" fill="url(#ray)"/>
+    <polygon points="880,0 980,0 1120,900 1020,900" fill="url(#ray)"/>
+    <polygon points="1180,0 1300,0 1420,900 1300,900" fill="url(#ray)"/>
+    <polygon points="280,0 360,0 460,900 380,900" fill="url(#ray)" opacity="0.55"/>
+    <polygon points="1500,0 1580,0 1700,900 1620,900" fill="url(#ray)" opacity="0.55"/>
+  </g>
+
+  <!-- Surface refraction lines at the top -->
+  <g stroke="#4FC3D7" stroke-width="1.2" fill="none" opacity="0.18">
+    <path d="M0 60 Q480 30 960 60 T1920 60"/>
+    <path d="M0 95 Q480 65 960 95 T1920 95"/>
+    <path d="M0 130 Q480 100 960 130 T1920 130"/>
+  </g>
+
+  <!-- Wave lines at bottom -->
+  <g stroke="#1A8FA8" stroke-width="1" fill="none" opacity="0.22">
+    <path d="M0 700 Q480 678 960 700 T1920 700"/>
+    <path d="M0 740 Q480 718 960 740 T1920 740"/>
+    <path d="M0 780 Q480 758 960 780 T1920 780"/>
+    <path d="M0 820 Q480 798 960 820 T1920 820"/>
+  </g>
+
+  <!-- Particles / drift -->
+  <g fill="#4FC3D7">
+    <circle cx="180" cy="350" r="2.5" opacity="0.7"/>
+    <circle cx="320" cy="540" r="1.8" opacity="0.5"/>
+    <circle cx="490" cy="280" r="2" opacity="0.6"/>
+    <circle cx="640" cy="610" r="1.5" opacity="0.5"/>
+    <circle cx="1280" cy="330" r="2" opacity="0.6"/>
+    <circle cx="1450" cy="590" r="2.5" opacity="0.7"/>
+    <circle cx="1620" cy="420" r="1.8" opacity="0.5"/>
+    <circle cx="1780" cy="680" r="2" opacity="0.6"/>
+    <circle cx="220" cy="700" r="1.5" opacity="0.4"/>
+    <circle cx="1100" cy="200" r="1.5" opacity="0.4"/>
+  </g>
+
+  <!-- Vignette overlay -->
+  <rect width="1920" height="900" fill="url(#vignette)"/>
+</svg>

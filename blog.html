@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal — MoorSafe</title>
+  <meta name="description" content="Notes from the harbor — design, testing, and stories from the people building MoorSafe." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="MoorSafe home"><img src="assets/logo.png" alt="MoorSafe" class="brand-logo" /></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="product.html">The Anchor</a></li>
+        <li><a href="why.html">Why MoorSafe</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html" aria-current="page">Journal</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section section-tight">
+      <div class="container-narrow" style="text-align:center;">
+        <span class="eyebrow">The journal</span>
+        <h1 style="margin-bottom:18px;">Notes from the harbor.</h1>
+        <p style="font-size:1.15rem; color:var(--ink-soft); max-width:60ch; margin:0 auto;">
+          Design notes, test results, stories from the boats and harbors that
+          shape what we build. New posts when they're worth your time.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="post-grid">
+
+          <!-- ============================================================
+               EACH POST CARD IS LINKED TO A FILE IN THE posts/ FOLDER.
+               TO ADD A THUMBNAIL: drop a JPG/PNG into assets/ with the
+               matching filename below, then refresh.
+               To edit the post text: open the matching file in posts/.
+               ============================================================ -->
+
+          <article class="post-card">
+            <a href="posts/yale-cordage-test.html"><div class="post-cover"><img class="post-thumb" src="assets/thumb-yale-cordage.png" alt="" /></div></a>
+            <div class="body">
+              <div class="post-meta">Testing</div>
+              <h3><a href="posts/yale-cordage-test.html" style="color:inherit;">Inside the Yale Cordage tensile test</a></h3>
+              <p>How we set up a 100-foot pull, what failure looked like for both anchors, and what surprised us in the data.</p>
+              <a href="posts/yale-cordage-test.html" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <a href="posts/three-bars.html"><div class="post-cover"><img class="post-thumb" src="assets/thumb-three-bars.jpg" alt="" /></div></a>
+            <div class="body">
+              <div class="post-meta">Engineering</div>
+              <h3><a href="posts/three-bars.html" style="color:inherit;">Why three bars, not four</a></h3>
+              <p>The geometry behind the cone, why three bars is the right answer, and why we tested every reasonable alternative.</p>
+              <a href="posts/three-bars.html" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <a href="posts/casco-bay.html"><div class="post-cover"><img class="post-thumb" src="assets/thumb-casco-bay.jpg" alt="" /></div></a>
+            <div class="body">
+              <div class="post-meta">Field</div>
+              <h3><a href="posts/casco-bay.html" style="color:inherit;">28 days in Casco Bay</a></h3>
+              <p>Setting two anchors, watching the bedding-in process, and pulling them with a lobster boat at 3:1 scope.</p>
+              <a href="posts/casco-bay.html" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <a href="posts/2am-calls.html"><div class="post-cover"><img class="post-thumb" src="assets/thumb-2am-calls.jpg" alt="" /></div></a>
+            <div class="body">
+              <div class="post-meta">For harbormasters</div>
+              <h3><a href="posts/2am-calls.html" style="color:inherit;">Why MoorSafe means fewer 2 a.m. calls</a></h3>
+              <p>The math behind unpredictable chain wraps and how a chain-wrap-proof field changes the harbormaster's job.</p>
+              <a href="posts/2am-calls.html" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <a href="posts/made-in-maine.html"><div class="post-cover"><img class="post-thumb" src="assets/thumb-made-in-maine.jpg" alt="" /></div></a>
+            <div class="body">
+              <div class="post-meta">Manufacturing</div>
+              <h3><a href="posts/made-in-maine.html" style="color:inherit;">Made in Maine isn't just a sticker</a></h3>
+              <p>A walk through the shop where MoorSafe anchors are welded, finished, and inspected before they ship.</p>
+              <a href="posts/made-in-maine.html" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+          <article class="post-card">
+            <a href="posts/for-captain-smith.html"><div class="post-cover"><img class="post-thumb" src="assets/thumb-captain-smith.jpg" alt="" /></div></a>
+            <div class="body">
+              <div class="post-meta">Story</div>
+              <h3><a href="posts/for-captain-smith.html" style="color:inherit;">For Captain Smith</a></h3>
+              <p>How the standard for a "working anchor" was set by a captain who knew exactly what working meant.</p>
+              <a href="posts/for-captain-smith.html" class="read-more">Read more →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><img src="assets/logo.png" alt="MoorSafe" class="brand-logo" /></a>
+          <p style="margin-top:18px; color:#8A97A6; max-width:340px; font-size:0.93rem;">Patent-pending mooring safety, designed and manufactured in Maine. In honor of Captain Gregory Smith.</p>
+        </div>
+        <div><h4>Product</h4><ul><li><a href="product.html">The Anchor</a></li><li><a href="why.html">Why MoorSafe</a></li><li><a href="why.html#tests">Test results</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="blog.html">Journal</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Get in touch</h4><ul><li><a href="mailto:hello@moorsafe.com">hello@moorsafe.com</a></li><li>Maine, USA</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> MoorSafe. All rights reserved.</span>
+        <span>In memory of Captain Gregory Smith, 1988–2025.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav-toggle'), menu = document.getElementById('primary-nav');
+      if (btn && menu) btn.addEventListener('click', function () { var open = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

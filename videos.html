@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos — MoorSafe</title>
+  <meta name="description" content="Watch MoorSafe in action — product demos, testing footage, and stories from the harbor." />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="MoorSafe home"><img src="assets/logo.png" alt="MoorSafe" class="brand-logo" /></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="product.html">The Anchor</a></li>
+        <li><a href="why.html">Why MoorSafe</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="videos.html" aria-current="page" style="color:var(--ink);">Videos</a></li>
+        <li><a href="contact.html" class="btn btn-primary nav-cta">Get in touch</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section section-tight">
+      <div class="container-narrow" style="text-align:center;">
+        <span class="eyebrow">Videos</span>
+        <h1 style="margin-bottom:18px;">See MoorSafe in action.</h1>
+        <p style="font-size:1.15rem; color:var(--ink-soft); max-width:60ch; margin:0 auto;">
+          Product demos, testing footage, and stories from the harbor. New videos
+          when they're worth watching.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+
+        <!-- =====================================================
+             TO ADD A VIDEO:
+             1. Copy one of the <article class="video-card"> blocks below.
+             2. Paste it inside <div class="video-grid">.
+             3. Get the YouTube video ID from the URL — it's the
+                part after "v=" or after "youtu.be/".
+                Example: youtube.com/watch?v=dQw4w9WgXcQ → ID is dQw4w9WgXcQ
+             4. Replace the YOUTUBE_ID below with the real ID.
+             5. Update the <h3> title, <p> description, and <div class="meta">.
+             6. Save and refresh.
+             ===================================================== -->
+
+        <div class="video-grid">
+
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/YOUTUBE_ID_1"
+                title="MoorSafe product demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="body">
+              <div class="meta">Demo · 2 min</div>
+              <h3>How the MoorSafe anchor works</h3>
+              <p>A 60-second walkthrough of the three-bar conical geometry and why it stops chain wrap before it starts.</p>
+            </div>
+          </article>
+
+          <article class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/YOUTUBE_ID_2"
+                title="Yale Cordage tensile test footage"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
+            <div class="body">
+              <div class="meta">Testing · 3 min</div>
+              <h3>The Yale Cordage tensile test</h3>
+              <p>Watch the moment of failure — both anchors loaded to destruction on a 100-foot test bed.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p style="text-align:center; margin-top:40px; color:var(--ink-muted); font-size:0.95rem;">
+          More videos on the way. <a href="contact.html">Sign up for the info packet</a> and we'll send the next one to your inbox.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="brand"><img src="assets/logo.png" alt="MoorSafe" class="brand-logo" /></a>
+          <p style="margin-top:18px; color:#8A97A6; max-width:340px; font-size:0.93rem;">Patent-pending mooring safety, designed and manufactured in Maine. In honor of Captain Gregory Smith.</p>
+        </div>
+        <div><h4>Product</h4><ul><li><a href="product.html">The Anchor</a></li><li><a href="why.html">Why MoorSafe</a></li><li><a href="why.html#tests">Test results</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="videos.html">Videos</a></li><li><a href="blog.html">Journal</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Get in touch</h4><ul><li><a href="mailto:hello@moorsafe.com">hello@moorsafe.com</a></li><li>Maine, USA</li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> MoorSafe. All rights reserved.</span>
+        <span>In memory of Captain Gregory Smith, 1988–2025.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.nav-toggle'), menu = document.getElementById('primary-nav');
+      if (btn && menu) btn.addEventListener('click', function () { var open = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+      var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
