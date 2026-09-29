@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>The Solution — MoorSafe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/logo-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#fff;color:#0B1F33;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#0B1F33;text-decoration:none}a:hover{color:#F26B0F}
+h1,h2,h3{margin:0;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+img,video{display:block;max-width:100%}
+summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:16px 24px;pointer-events:none">
+  <div style="pointer-events:auto;width:100%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-radius:999px;padding:8px 10px 8px 20px;box-shadow:0 1px 0 rgba(11,31,51,.06),0 12px 40px rgba(11,31,51,.10)">
+    <a href="index.html" style="display:flex;align-items:center"><img src="assets/logo-transparent.png" alt="MoorSafe" style="height:26px"></a>
+    <div style="display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;color:#3C4854;white-space:nowrap">
+      <a href="solution.html" style="color:#F26B0F">The Solution</a>
+      <a href="#tests" style="color:#3C4854" style-hover="color:#F26B0F">Proof</a>
+      <a href="#buy" style="color:#3C4854" style-hover="color:#F26B0F">Pricing</a>
+      <a href="about.html" style="color:#3C4854" style-hover="color:#F26B0F">About</a>
+    </div>
+    <a href="{{ checkoutUrl }}" style="background:#0B1F33;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap" style-hover="background:#F26B0F;color:#fff">Buy now</a>
+  </div>
+</nav>
+
+<header data-screen-label="Solution intro" style="background:#fff;padding:160px 24px 64px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:28px">
+    <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F26B0F">The solution</span>
+    <h1 style="font-size:clamp(44px,6.4vw,96px);font-weight:800;color:#0B1F33;max-width:16ch">A simple geometric change. A complete fix.</h1>
+    <p style="font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:#5A6673;font-weight:500;max-width:56ch">We didn't reinvent the mushroom anchor — we removed its flaw. Three symmetrically positioned bars turn the stem into a cone the chain can't wrap. It still beds into mud, still gains suction, still holds.</p>
+  </div>
+</header>
+
+<section data-screen-label="Product video" style="background:#fff;padding:0 24px 120px">
+  <div style="max-width:1200px;margin:0 auto;border-radius:28px;overflow:hidden;background:#0B1F33;box-shadow:0 40px 100px rgba(11,31,51,.18)">
+    <video autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" poster="uploads/anchor-hero.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover"><source src="uploads/hero-video.mp4" type="video/mp4"></video>
+  </div>
+</section>
+
+<section data-screen-label="The problem" style="background:#F5F5F3;padding:120px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+    <div style="display:grid;gap:24px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8A939D">The problem</span>
+      <h2 style="font-size:clamp(34px,4.2vw,58px);font-weight:800;color:#0B1F33">Every mushroom anchor in a soft-bottom harbor has the same flaw.</h2>
+      <p style="font-size:17px;line-height:1.6;color:#5A6673;font-weight:500">The bowl sinks into mud and gains suction over time — but its vertical stem is the weakness. As tides, currents, and wind swing the boat, the chain rotates around the stem. Once it catches, every cycle pulls it tighter.</p>
+      <div style="display:grid;gap:12px;font-size:16px;font-weight:600;color:#0B1F33;border-top:1px solid #E3E5E8;padding-top:20px">
+        <div style="display:flex;gap:14px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#8A939D;flex:none"></span>Effective scope shrinks, peak loads rise</div>
+        <div style="display:flex;gap:14px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#8A939D;flex:none"></span>Mooring balls pull under at high tide</div>
+        <div style="display:flex;gap:14px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#8A939D;flex:none"></span>Chain or shackle failure under load</div>
+        <div style="display:flex;gap:14px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#8A939D;flex:none"></span>Boats break free — the harbormaster gets the call</div>
+      </div>
+    </div>
+    <img src="assets/chain-wrap-1.png" alt="Chain wrapped around a mushroom anchor stem" style="width:100%;border-radius:24px;background:#fff;padding:24px">
+  </div>
+</section>
+
+<section data-screen-label="How it works" style="background:#fff;padding:120px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:64px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:end">
+      <h2 style="font-size:clamp(36px,4.6vw,64px);font-weight:800;color:#0B1F33">Three bars. One geometry.</h2>
+      <p style="font-size:18px;line-height:1.55;color:#5A6673;font-weight:500;max-width:46ch">The bars rise from the bowl to a single point above the stem. The result is a cone — and a cone has nowhere for chain to catch.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+      <div style="background:#F5F5F3;border-radius:28px;overflow:hidden"><video autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" poster="uploads/anchor-hero.jpg" style="width:100%;aspect-ratio:4/5;object-fit:cover"><source src="uploads/anchor-loop.mp4.mp4" type="video/mp4"></video></div>
+      <div style="display:grid">
+        <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid #E3E5E8"><span style="font-size:15px;font-weight:800;color:#F26B0F">01</span><div style="display:grid;gap:8px"><h3 style="font-size:24px;font-weight:800">The bowl still beds in</h3><p style="font-size:16px;line-height:1.55;color:#5A6673;font-weight:500">Same concave mushroom bowl. It sinks into mud and gains suction over weeks — holding power isn't compromised.</p></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid #E3E5E8"><span style="font-size:15px;font-weight:800;color:#F26B0F">02</span><div style="display:grid;gap:8px"><h3 style="font-size:24px;font-weight:800">The cone stops the wrap</h3><p style="font-size:16px;line-height:1.55;color:#5A6673;font-weight:500">Three symmetrical bars meet above the stem. As tides and currents shift, the chain has nothing to catch on — it slides off every time.</p></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid #E3E5E8"><span style="font-size:15px;font-weight:800;color:#F26B0F">03</span><div style="display:grid;gap:8px"><h3 style="font-size:24px;font-weight:800">Stronger than the original</h3><p style="font-size:16px;line-height:1.55;color:#5A6673;font-weight:500">40,657 lb tensile strength versus 38,560 lb for the traditional mushroom — a stronger anchor, not a tradeoff.</p></div></div>
+        <div style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:28px 0;border-top:1px solid #E3E5E8;border-bottom:1px solid #E3E5E8"><span style="font-size:15px;font-weight:800;color:#F26B0F">04</span><div style="display:grid;gap:8px"><h3 style="font-size:24px;font-weight:800">Installs like the anchor it replaces</h3><p style="font-size:16px;line-height:1.55;color:#5A6673;font-weight:500">Same chain, shackles, scope, and setting practice. Any mooring service provider will know exactly what to do.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tests" data-screen-label="Test results" style="background:#0B1F33;padding:120px 24px;scroll-margin-top:40px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:64px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:end">
+      <h2 style="font-size:clamp(36px,4.6vw,64px);font-weight:800;color:#fff">Tested where it counts.</h2>
+      <p style="font-size:18px;line-height:1.55;color:rgba(255,255,255,.7);font-weight:500;max-width:46ch">We didn't run tests on our own bench. Tensile at Yale Cordage in Saco; 28 days on the seabed in Casco Bay.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+      <article style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:40px;display:grid;gap:20px;align-content:start;color:#fff">
+        <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)">Structural · Yale Cordage, Saco</span>
+        <h3 style="font-size:28px;font-weight:800">Tensile strength to failure</h3>
+        <p style="font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.7);font-weight:500">Horizontal test on a 100-ft bed rated to 1.3 million lb. A 300 lb traditional mushroom and a 300 lb MoorSafe prototype loaded to failure.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:8px">
+          <div><div style="font-size:clamp(32px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.5)">38,560</div><div style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600;margin-top:4px">Traditional · stem fracture</div></div>
+          <div><div style="font-size:clamp(32px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;color:#F26B0F">40,657</div><div style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;margin-top:4px">MoorSafe · +5%</div></div>
+        </div>
+      </article>
+      <article style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:40px;display:grid;gap:20px;align-content:start;color:#fff">
+        <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)">Field · Casco Bay</span>
+        <h3 style="font-size:28px;font-weight:800">Breakout after 28-day embedment</h3>
+        <p style="font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.7);font-weight:500">Both anchors set on the same muddy seabed for 28 days, then pulled by a lobster boat at 3:1 scope with a 4,000 lb digital load indicator.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:8px">
+          <div><div style="font-size:clamp(32px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;color:rgba(255,255,255,.5)">1,575</div><div style="font-size:13px;color:rgba(255,255,255,.55);font-weight:600;margin-top:4px">Traditional · partially buried</div></div>
+          <div><div style="font-size:clamp(32px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;color:#F26B0F">1,295</div><div style="font-size:13px;color:rgba(255,255,255,.85);font-weight:600;margin-top:4px">MoorSafe · fully buried</div></div>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.6);font-weight:500">Comparable breakout with deeper burial — holding keeps improving as sediment consolidates above the anchor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Specifications" style="background:#fff;padding:120px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+    <div style="background:#F5F5F3;border-radius:28px;padding:32px"><img src="uploads/anchor-hero.jpg" alt="MoorSafe anchor" style="width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply"></div>
+    <div style="display:grid;gap:24px">
+      <h2 style="font-size:clamp(34px,4.2vw,58px);font-weight:800;color:#0B1F33">Specifications</h2>
+      <dl style="margin:0;display:grid">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid #E3E5E8;font-size:16px"><dt style="color:#5A6673;font-weight:500">Weights</dt><dd style="margin:0;font-weight:700">300 · 400 · 500 lb</dd></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid #E3E5E8;font-size:16px"><dt style="color:#5A6673;font-weight:500">Tensile strength (300 lb)</dt><dd style="margin:0;font-weight:700;color:#F26B0F">40,657 lb</dd></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid #E3E5E8;font-size:16px"><dt style="color:#5A6673;font-weight:500">Material</dt><dd style="margin:0;font-weight:700">Cast-iron base, steel bars</dd></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid #E3E5E8;font-size:16px"><dt style="color:#5A6673;font-weight:500">Installation</dt><dd style="margin:0;font-weight:700">Identical to a mushroom anchor</dd></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid #E3E5E8;font-size:16px"><dt style="color:#5A6673;font-weight:500">Patent</dt><dd style="margin:0;font-weight:700">Pending (U.S.)</dd></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid #E3E5E8;border-bottom:1px solid #E3E5E8;font-size:16px"><dt style="color:#5A6673;font-weight:500">Made in</dt><dd style="margin:0;font-weight:700">Maine, USA</dd></div>
+      </dl>
+      <a href="info-packet.html" style="font-weight:700;font-size:16px;justify-self:start;border-bottom:2px solid #F26B0F;padding-bottom:4px">Full spec sheet &amp; info packet →</a>
+    </div>
+  </div>
+</section>
+
+<section id="buy" data-screen-label="Pricing" style="background:#F5F5F3;padding:120px 24px;scroll-margin-top:40px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:center">
+    <div style="display:grid;gap:20px">
+      <h2 style="font-size:clamp(36px,4.6vw,64px);font-weight:800;color:#0B1F33">Choose your size.</h2>
+      <p style="font-size:17px;line-height:1.55;color:#5A6673;font-weight:500;max-width:44ch">Sizing depends on displacement, scope, and exposure. Not sure? Request a quote and we'll confirm it for your harbor.</p>
+      <div><div style="font-size:13px;color:#8A939D;font-weight:600">Selected · {{ selectedWeight }} lb</div><div style="font-size:48px;font-weight:800;letter-spacing:-.04em;color:#0B1F33">{{ selectedPrice }}</div></div>
+    </div>
+    <div style="display:grid;gap:10px">
+      <sc-for list="{{ sizes }}" as="s" hint-placeholder-count="3">
+        <div onClick="{{ s.select }}" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;border-radius:16px;cursor:pointer;background:{{ s.bg }};color:{{ s.color }};border:1.5px solid {{ s.border }}">
+          <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><span style="font-size:26px;font-weight:800;letter-spacing:-.03em">{{ s.weight }} lb</span><span style="font-size:15px;font-weight:500;opacity:.8">{{ s.title }}</span></div><div style="display:flex;align-items:center;gap:16px"><span style="font-size:18px;font-weight:800;letter-spacing:-.02em">{{ s.price }}</span>
+          <span style="width:20px;height:20px;border-radius:50%;border:1.5px solid {{ s.border }};display:grid;place-items:center"><span style="width:10px;height:10px;border-radius:50%;background:{{ s.dot }}"></span></span></div>
+        </div>
+      </sc-for>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;padding-top:12px">
+        <a href="{{ checkoutUrl }}" style="background:#F26B0F;color:#fff;padding:16px 30px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap" style-hover="background:#0B1F33;color:#fff">Buy {{ selectedWeight }} lb — {{ selectedPrice }}</a>
+        <a href="about.html#quote" style="color:#0B1F33;border:1.5px solid #D9DCE0;background:#fff;padding:16px 26px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap" style-hover="border-color:#0B1F33;color:#0B1F33">Request a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#fff;padding:48px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid #ECEDEE;padding-top:28px;font-size:14px;color:#8A939D;font-weight:500">
+    <img src="assets/logo-transparent.png" alt="MoorSafe" style="height:22px">
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <a href="index.html" style="color:#5A6673">Home</a>
+      <a href="solution.html" style="color:#5A6673">The Solution</a>
+      <a href="about.html" style="color:#5A6673">About</a>
+      <a href="blog.html" style="color:#5A6673">Blog</a>
+      <a href="mailto:{{ contactEmail }}" style="color:#5A6673">{{ contactEmail }}</a>
+    </div>
+    <span>© {{ year }} MoorSafe · Patent pending · In memory of Capt. Gregory Smith</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#buy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;price300&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$1,895&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price400&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,295&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price500&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,695&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+class Component extends DCLogic {
+  state = { selected: 300 };
+  componentDidMount() { document.querySelectorAll("video").forEach(v => { v.muted = true; v.playsInline = true; v.play().catch(() => {}); }); }
+  renderVals() {
+    const defs = [
+      { weight: 300, title: 'Boats up to ~30 ft', price: this.props.price300 ?? '$1,895' },
+      { weight: 400, title: 'Boats ~30–40 ft', price: this.props.price400 ?? '$2,295' },
+      { weight: 500, title: 'Boats 40 ft+ or exposed harbors', price: this.props.price500 ?? '$2,695' }
+    ];
+    const sel = this.state.selected;
+    const sizes = defs.map(d => {
+      const on = d.weight === sel;
+      return { weight: String(d.weight), title: d.title, price: d.price, select: () => this.setState({ selected: d.weight }),
+        bg: on ? '#0B1F33' : '#fff', color: on ? '#fff' : '#0B1F33', border: on ? '#0B1F33' : '#E3E5E8', dot: on ? '#F26B0F' : 'transparent' };
+    });
+    return {
+      sizes, selectedWeight: String(sel), selectedPrice: defs.find(d => d.weight === sel).price,
+      checkoutUrl: this.props.checkoutUrl ?? '#buy',
+      contactEmail: this.props.contactEmail ?? 'hello@moorsafe.com',
+      year: new Date().getFullYear()
+    };
+  }
+}
+</script>
+</body>
+</html>
