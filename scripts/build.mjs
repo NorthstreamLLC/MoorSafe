@@ -18,6 +18,7 @@ const hash = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT
 
 /* ---------- navigation ---------- */
 const NAV = [
+  { k: 'chainwrap', label: 'Chain Wrap', href: '/chain-wrap' },
   { k: 'solution', label: 'The Solution', href: '/solution#video' },
   { k: 'proof', label: 'Proof', href: '/solution#tests' },
   { k: 'pros', label: 'For Pros', href: '/pros' },
@@ -55,7 +56,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
 </footer>`;
 
 /* ---------- fragments ---------- */
-const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
+const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
 const sizeRows = () => [300, 400, 500].map((w, i) => {
   const t = { 300: 'Boats up to ~30 ft', 400: 'Boats ~30–40 ft', 500: 'Boats 40 ft+ or exposed harbors' }[w];
   return `<button type="button" class="size-row${i === 0 ? ' is-on' : ''}" data-size="${w}" aria-pressed="${i === 0}"><span class="sz-l"><span class="sz-w">${w} lb</span><span class="sz-t">${t}</span></span><span class="sz-r"><span class="sz-p">${money(cfg.prices[w])}</span><span class="sz-dot" aria-hidden="true"></span></span></button>`;
