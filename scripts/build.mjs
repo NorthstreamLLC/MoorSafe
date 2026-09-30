@@ -19,7 +19,7 @@ const hash = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT
 /* ---------- navigation ---------- */
 const NAV = [
   { k: 'chainwrap', label: 'Chain Wrap', href: '/chain-wrap' },
-  { k: 'solution', label: 'The Solution', href: '/solution#video' },
+  { k: 'solution', label: 'The Solution', href: '/solution' },
   { k: 'proof', label: 'Proof', href: '/solution#tests' },
   { k: 'pros', label: 'For Pros', href: '/pros' },
   { k: 'faq', label: 'FAQ', href: '/faq' },
@@ -31,7 +31,7 @@ const MENU_EXTRA = [
 ];
 const LOCAL = {
   index: { proof: '#proof' },
-  solution: { solution: '#video', proof: '#tests' },
+  solution: { solution: '#main', proof: '#tests' },
 };
 const navHtml = (active, name) => {
   const loc = LOCAL[name] || {};
@@ -48,7 +48,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
     <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
       <a href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="103" height="22" style="height:22px;width:auto"></a>
       <nav aria-label="Footer" style="display:flex;gap:10px 24px;flex-wrap:wrap">
-        <a href="/" style="color:#5A6673">Home</a><a href="/solution#video" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
+        <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
       </nav>
     </div>
     <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© ${year} MoorSafe · Designed and made in Maine, USA · Patent pending</span><span>In memory of Capt. Gregory Smith, 1988–2025</span></div>
@@ -112,13 +112,13 @@ function fix(html, { firstImgEager }) {
 const orgNode = () => ({
   '@type': 'Organization', '@id': SITE + '/#org', name: 'MoorSafe', url: SITE + '/', email: cfg.email,
   logo: { '@type': 'ImageObject', url: SITE + '/assets/logo-transparent.png' },
-  description: 'MoorSafe makes a mushroom mooring anchor with a conical, patent-pending design that prevents chain wrap. Designed and made in Maine.',
+  description: 'MoorSafe makes a mushroom mooring anchor with a conical, patent-pending design that significantly reduces the risk of chain wrap. Designed and made in Maine.',
   address: { '@type': 'PostalAddress', addressRegion: 'ME', addressCountry: 'US' },
   founder: [{ '@type': 'Person', name: 'Scott Karkos' }, { '@type': 'Person', name: 'Captain Gregory Smith' }],
 });
 const productNode = () => ({
   '@type': 'Product', '@id': SITE + '/#product', name: 'MoorSafe Mooring Anchor',
-  description: 'A mushroom mooring anchor with three symmetrical bars forming a cone above the stem, so mooring chain cannot wrap. Available in 400 lb. Cast-iron base with welded steel bars. Designed and made in Maine.',
+  description: 'A mushroom mooring anchor with three symmetrical bars forming a cone above the stem, so mooring chain has nothing to catch on. Available in 400 lb. Cast-iron base with welded steel bars. Designed and made in Maine.',
   image: SITE + cfg.ogImage, brand: { '@id': SITE + '/#org' }, material: 'Cast iron and steel', color: 'Safety orange',
 });
 const crumbNode = (pageUrl, title, extra) => {
@@ -153,7 +153,7 @@ function headHtml(m, url, css, js) {
 <meta property="og:url" content="${canon}">
 <meta property="og:image" content="${og}">
 ${m.ogImage ? '' : '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'}
-<meta property="og:image:alt" content="${esc(m.ogAlt || 'The MoorSafe mooring anchor: a mushroom anchor with a three-bar cone that prevents chain wrap')}">
+<meta property="og:image:alt" content="${esc(m.ogAlt || 'The MoorSafe mooring anchor: a mushroom anchor with a three-bar cone that significantly reduces the risk of chain wrap')}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
