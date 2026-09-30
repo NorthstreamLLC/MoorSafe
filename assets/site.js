@@ -99,7 +99,9 @@
   /* ---------- forms ---------- */
   function fieldsOf(form) {
     var d = {};
-    $$('input,select,textarea', form).forEach(function (el) { if (el.name && el.type !== 'submit') d[el.name] = el.value; });
+    $$('input,select,textarea', form).forEach(function (el) { if (!el.name || el.type === 'submit') return;
+      if (el.type === 'checkbox') { if (el.checked) d[el.name] = el.value; return; }
+      d[el.name] = el.value; });
     return d;
   }
   function lines(d) {
@@ -152,6 +154,7 @@
         }
       } else if (kind === 'packet') {
         payload = { type: 'info-packet', customer: d };
+        var pl = $('[data-packet-link]', form); if (pl) pl.hidden = false;
         subject = 'MoorSafe info packet request';
         body = 'Please send the MoorSafe info packet to ' + (d.email || '') + '.';
       } else {
@@ -162,7 +165,7 @@
 
       if (C.formEndpoint) {
         post(C.formEndpoint, payload)
-          .then(function () { form.reset(); done(form, kind === 'order' ? 'Order request sent. We’ll confirm details, shipping and payment by email.' : 'Thanks — we’ll reply within one business day.'); })
+          .then(function () { form.reset(); done(form, kind === 'order' ? 'Order request sent. We’ll confirm details, shipping and payment by email.' : kind === 'packet' ? 'Thanks — we’ll email you the info packet. You can also download it right now.' : 'Thanks — we’ll reply within one business day.'); })
           .catch(function () { mailto(subject, body); });
       } else {
         mailto(subject, body);

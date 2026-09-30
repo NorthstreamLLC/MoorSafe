@@ -18,6 +18,7 @@ const hash = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT
 
 /* ---------- navigation ---------- */
 const NAV_A = [
+  { k: 'product', label: 'The Product', href: '/product' },
   { k: 'solution', label: 'The Solution', href: '/solution' },
   { k: 'proof', label: 'Proof', href: '/solution#tests' },
   { k: 'pros', label: 'For Pros', href: '/pros' },
@@ -50,7 +51,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
     <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
       <a href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="103" height="22" style="height:22px;width:auto"></a>
       <nav aria-label="Footer" style="display:flex;gap:10px 24px;flex-wrap:wrap">
-        <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/chain-wrap" style="color:#5A6673">Chain Wrap</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
+        <a href="/" style="color:#5A6673">Home</a><a href="/product" style="color:#5A6673">The Product</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/chain-wrap" style="color:#5A6673">Chain Wrap</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
       </nav>
     </div>
     <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© ${year} MoorSafe · Designed and made in Maine, USA · Patent pending</span><span>In memory of Capt. Gregory Smith, 1988–2025</span></div>
@@ -58,7 +59,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
 </footer>`;
 
 /* ---------- fragments ---------- */
-const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
+const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'product.html': '/product', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
 const sizeRows = () => [300, 400, 500].map((w, i) => {
   const t = { 300: 'Boats up to ~30 ft', 400: 'Boats ~30–40 ft', 500: 'Boats 40 ft+ or exposed harbors' }[w];
   return `<button type="button" class="size-row${i === 0 ? ' is-on' : ''}" data-size="${w}" aria-pressed="${i === 0}"><span class="sz-l"><span class="sz-w">${w} lb</span><span class="sz-t">${t}</span></span><span class="sz-r"><span class="sz-p">${money(cfg.prices[w])}</span><span class="sz-dot" aria-hidden="true"></span></span></button>`;
