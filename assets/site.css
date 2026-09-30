@@ -41,6 +41,18 @@ a,button{transition:color .15s,background-color .15s,border-color .15s}
 @media (max-width:900px){.nv-links{display:none}.nv-menu{display:block}}
 @media (max-width:480px){.nv{padding:12px}.nv-pill{padding:6px 8px 6px 16px}.nv-logo img{height:22px}.nv-buy{padding:9px 16px;font-size:13px}}
 
+/* nav "Learn" dropdown */
+.nv-dd{position:relative}
+.nv-dd summary{display:flex;align-items:center;gap:7px;color:#3C4854;cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+.nv-dd summary::-webkit-details-marker{display:none}
+.nv-dd summary::after{content:'';width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+.nv-dd[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.nv-dd:hover summary,.nv-dd[open] summary,.nv-dd.is-current summary{color:#F26B0F}
+.nv-dd-menu{position:absolute;left:-16px;top:calc(100% + 22px);min-width:190px;display:grid;gap:2px;background:#fff;border-radius:16px;padding:8px;box-shadow:0 20px 60px rgba(11,31,51,.2)}
+.nv-dd-menu::before{content:'';position:absolute;left:0;right:0;top:-24px;height:24px}
+.nv-links .nv-dd-menu a{padding:11px 14px;border-radius:10px;color:#0B1F33;font-weight:600}
+.nv-links .nv-dd-menu a:hover,.nv-links .nv-dd-menu a[aria-current="page"]{background:#F5F5F3;color:#F26B0F}
+
 /* size picker */
 .size-row{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;padding:20px 24px;border-radius:16px;cursor:pointer;background:#fff;color:#0B1F33;border:1.5px solid #E3E5E8;text-align:left;font:inherit}
 .size-row.is-on{background:#0B1F33;color:#fff;border-color:#0B1F33}

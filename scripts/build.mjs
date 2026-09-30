@@ -17,29 +17,31 @@ const year = new Date().getFullYear();
 const hash = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT, f))).digest('hex').slice(0, 8);
 
 /* ---------- navigation ---------- */
-const NAV = [
-  { k: 'chainwrap', label: 'Chain Wrap', href: '/chain-wrap' },
+const NAV_A = [
   { k: 'solution', label: 'The Solution', href: '/solution' },
   { k: 'proof', label: 'Proof', href: '/solution#tests' },
   { k: 'pros', label: 'For Pros', href: '/pros' },
+];
+const LEARN = [
+  { k: 'chainwrap', label: 'Chain Wrap', href: '/chain-wrap' },
   { k: 'faq', label: 'FAQ', href: '/faq' },
-  { k: 'about', label: 'About', href: '/about' },
-];
-const MENU_EXTRA = [
   { k: 'blog', label: 'Journal', href: '/blog' },
-  { k: 'contact', label: 'Contact', href: '/contact' },
 ];
+const NAV_B = [{ k: 'about', label: 'About', href: '/about' }];
+const MENU_EXTRA = [{ k: 'contact', label: 'Contact', href: '/contact' }];
+const NAV = [...NAV_A, ...LEARN, ...NAV_B]; // flat list used by the mobile menu
 const LOCAL = {
   index: { proof: '#proof' },
   solution: { solution: '#main', proof: '#tests' },
 };
 const navHtml = (active, name) => {
   const loc = LOCAL[name] || {};
-  const a = (l, cls = '') => `<a href="${loc[l.k] || l.href}"${l.k === active ? ' aria-current="page"' : ''}${cls}>${l.label}</a>`;
+  const a = l => `<a href="${loc[l.k] || l.href}"${l.k === active ? ' aria-current="page"' : ''}>${l.label}</a>`;
+  const learnOn = LEARN.some(l => l.k === active);
   return `<nav class="nv" aria-label="Main"><div class="nv-pill">
   <a class="nv-logo" href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="120" height="26"></a>
-  <div class="nv-links">${NAV.map(l => a(l)).join('')}</div>
-  <details class="nv-menu"><summary>Menu</summary><div class="nv-drop">${[...NAV, ...MENU_EXTRA].map(l => a(l)).join('')}</div></details>
+  <div class="nv-links">${NAV_A.map(a).join('')}<details class="nv-dd${learnOn ? ' is-current' : ''}"><summary>Learn</summary><div class="nv-dd-menu">${LEARN.map(a).join('')}</div></details>${NAV_B.map(a).join('')}</div>
+  <details class="nv-menu"><summary>Menu</summary><div class="nv-drop">${[...NAV, ...MENU_EXTRA].map(a).join('')}</div></details>
   <a class="nv-buy" href="${CTA_HREF}">${CTA_LABEL}</a>
 </div></nav>`;
 };
@@ -48,7 +50,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
     <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
       <a href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="103" height="22" style="height:22px;width:auto"></a>
       <nav aria-label="Footer" style="display:flex;gap:10px 24px;flex-wrap:wrap">
-        <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
+        <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/chain-wrap" style="color:#5A6673">Chain Wrap</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
       </nav>
     </div>
     <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© ${year} MoorSafe · Designed and made in Maine, USA · Patent pending</span><span>In memory of Capt. Gregory Smith, 1988–2025</span></div>

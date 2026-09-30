@@ -26,6 +26,23 @@
     } else { lazy.forEach(play); }
   }
 
+  /* nav "Learn" dropdown: opens on hover (mouse) or click/keyboard; closes on outside click, Esc or moving away */
+  var canHover = window.matchMedia && matchMedia('(hover: hover)').matches;
+  $$('.nv-dd').forEach(function (dd) {
+    var t;
+    if (canHover) {
+      dd.addEventListener('mouseenter', function () { clearTimeout(t); dd.open = true; });
+      dd.addEventListener('mouseleave', function () { t = setTimeout(function () { dd.open = false; }, 160); });
+      $('summary', dd).addEventListener('click', function (e) { e.preventDefault(); dd.open = true; });
+    }
+  });
+  document.addEventListener('click', function (e) {
+    $$('.nv-dd[open], .nv-menu[open]').forEach(function (d) { if (!d.contains(e.target)) d.open = false; });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') $$('.nv-dd[open], .nv-menu[open]').forEach(function (d) { d.open = false; });
+  });
+
   /* ---------- size picker ---------- */
   function paint() {
     var p = PRICES[state.size];
