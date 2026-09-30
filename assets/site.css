@@ -38,7 +38,14 @@ a,button{transition:color .15s,background-color .15s,border-color .15s}
 .nv-menu summary{padding:9px 16px;border-radius:999px;font-size:14px;font-weight:700;color:#3C4854;background:rgba(11,31,51,.06)}
 .nv-drop{position:absolute;right:0;top:calc(100% + 14px);min-width:220px;display:grid;gap:2px;background:#fff;border-radius:20px;padding:10px;box-shadow:0 20px 60px rgba(11,31,51,.2)}
 .nv-drop a{padding:12px 14px;border-radius:12px;font-weight:600;font-size:15px;color:#0B1F33}.nv-drop a:hover,.nv-drop a[aria-current="page"]{background:#F5F5F3;color:#F26B0F}
-@media (max-width:900px){.nv-links{display:none}.nv-menu{display:block}}
+.nv-sub summary{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:12px;font-weight:600;font-size:15px;color:#0B1F33;cursor:pointer;list-style:none}
+.nv-sub summary::-webkit-details-marker{display:none}
+.nv-sub summary::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s;margin-right:4px}
+.nv-sub[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.nv-sub summary:hover,.nv-sub[open] summary{color:#F26B0F}
+.nv-sub-list{display:grid;gap:2px;margin:0 0 6px 12px;padding-left:10px;border-left:2px solid #E3E5E8}
+.nv-sub-list a{padding:10px 14px;font-size:14.5px}
+@media (max-width:900px){.nv-links{display:none}.nv-menu{display:block;position:static}.nv-pill{position:relative}.nv-drop{left:0;right:0;min-width:0;top:calc(100% + 10px);max-height:calc(100vh - 100px);overflow-y:auto}}
 @media (max-width:480px){.nv{padding:12px}.nv-pill{padding:6px 8px 6px 16px}.nv-logo img{height:22px}.nv-buy{padding:9px 16px;font-size:13px}}
 
 /* nav "Learn" dropdown */
