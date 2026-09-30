@@ -111,7 +111,7 @@ nav>div{gap:8px!important}.nv-links{gap:12px!important;font-size:13.5px!importan
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;solution.html#buy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;checkout.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
 class Component extends DCLogic {
   state = { openId: null };
   componentDidMount() { document.querySelectorAll("video").forEach(v => { v.muted = true; v.playsInline = true; v.play().catch(() => {}); }); }
@@ -135,7 +135,7 @@ class Component extends DCLogic {
     return {
       posts, rest: posts.slice(1), open, hasOpen: !!open,
       close: () => this.setState({ openId: null }),
-      checkoutUrl: this.props.checkoutUrl ?? 'solution.html#buy',
+      checkoutUrl: this.props.checkoutUrl ?? 'checkout.html',
       contactEmail: this.props.contactEmail ?? 'hello@moorsafe.com',
       year: new Date().getFullYear()
     };

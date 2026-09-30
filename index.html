@@ -137,7 +137,7 @@ nav>div{gap:8px!important}.nv-links{gap:12px!important;font-size:13.5px!importan
       <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:8px">
         <div><div style="font-size:13px;color:#8A939D;font-weight:600">Selected</div><div style="font-size:40px;font-weight:800;letter-spacing:-.04em;color:#0B1F33">{{ selectedPrice }}</div></div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a href="{{ checkoutUrl }}" style="background:#F26B0F;color:#fff;padding:16px 30px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap" style-hover="background:#0B1F33;color:#fff">Buy {{ selectedWeight }} lb — {{ selectedPrice }}</a>
+          <a href="{{ buyHref }}" style="background:#F26B0F;color:#fff;padding:16px 30px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap" style-hover="background:#0B1F33;color:#fff">Buy {{ selectedWeight }} lb — {{ selectedPrice }}</a>
           <a href="about.html#quote" style="color:#0B1F33;border:1.5px solid #D9DCE0;padding:16px 26px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap" style-hover="border-color:#0B1F33;color:#0B1F33">Request a quote</a>
         </div>
       </div>
@@ -193,7 +193,7 @@ nav>div{gap:8px!important}.nv-links{gap:12px!important;font-size:13.5px!importan
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;heroSource&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;water&quot;,&quot;youtube&quot;],&quot;default&quot;:&quot;water&quot;,&quot;tsType&quot;:&quot;'water'|'youtube'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#buy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;price300&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$1,895&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price400&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,295&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price500&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,695&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroSource&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;water&quot;,&quot;youtube&quot;],&quot;default&quot;:&quot;water&quot;,&quot;tsType&quot;:&quot;'water'|'youtube'&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;checkout.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;price300&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$1,895&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price400&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,295&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price500&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,695&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
 class Component extends DCLogic {
   componentDidMount() {
     document.querySelectorAll("video").forEach(v => {
@@ -219,7 +219,7 @@ class Component extends DCLogic {
     return {
       isWater: src === 'water', isYouTube: src === 'youtube',
       sizes, selectedWeight: String(sel), selectedPrice: defs.find(d => d.weight === sel).price,
-      checkoutUrl: this.props.checkoutUrl ?? '#buy',
+      checkoutUrl: this.props.checkoutUrl ?? 'checkout.html', buyHref: (this.props.checkoutUrl ?? 'checkout.html') + '?size=' + sel,
       contactEmail: email,
       year: new Date().getFullYear(),
       packetEmail: this.state.packetEmail,

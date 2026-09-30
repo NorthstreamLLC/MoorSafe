@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Checkout — MoorSafe</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/logo-transparent.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#fff;color:#0B1F33;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+*{box-sizing:border-box}
+a{color:#0B1F33;text-decoration:none}a:hover{color:#F26B0F}
+h1,h2,h3{margin:0;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+img,video{display:block;max-width:100%}
+input,select,textarea,button{font:inherit}
+@media (max-width:640px){
+.nv-hide{display:none!important}
+nav>div{gap:8px!important}.nv-links{gap:12px!important;font-size:13.5px!important}
+.nv-logo{flex:none!important}.nv-logo img{height:20px!important;width:auto!important}
+.nv-buy{padding:8px 12px!important;font-size:13px!important}
+}
+</style>
+</helmet>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:16px 24px;pointer-events:none">
+  <div style="pointer-events:auto;width:100%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-radius:999px;padding:8px 10px 8px 20px;box-shadow:0 1px 0 rgba(11,31,51,.06),0 12px 40px rgba(11,31,51,.10)">
+    <a class="nv-logo" href="index.html" style="display:flex;align-items:center"><img src="assets/logo-transparent.png" alt="MoorSafe" style="height:26px"></a>
+    <div class="nv-links" style="display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;color:#3C4854;white-space:nowrap">
+      <a href="solution.html#video" style="color:#3C4854" style-hover="color:#F26B0F">The Solution</a>
+      <a class="nv-hide" href="solution.html#tests" style="color:#3C4854" style-hover="color:#F26B0F">Proof</a>
+      <a class="nv-hide" href="solution.html#buy" style="color:#3C4854" style-hover="color:#F26B0F">Pricing</a>
+      <a href="about.html" style="color:#3C4854" style-hover="color:#F26B0F">About</a>
+    </div>
+    <a class="nv-buy" href="{{ checkoutUrl }}" style="background:#0B1F33;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap" style-hover="background:#F26B0F;color:#fff">Buy now</a>
+  </div>
+</nav>
+
+<header data-screen-label="Checkout intro" style="background:#fff;padding:130px 24px 24px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:14px">
+    <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F26B0F">Checkout</span>
+    <h1 style="font-size:clamp(38px,5vw,68px);font-weight:800;color:#0B1F33">Order your MoorSafe.</h1>
+    <p style="font-size:17px;line-height:1.55;color:#5A6673;font-weight:500;max-width:56ch">Pick your size, tell us where to send it, and we'll take it from there. Not sure which size fits your boat? <a href="about.html#quote" style="color:#0B1F33;font-weight:700;border-bottom:2px solid #F26B0F">Request a quote</a> and we'll confirm it for your harbor.</p>
+  </div>
+</header>
+
+<section id="order" data-screen-label="Order form" style="background:#fff;padding:24px 24px 120px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:start">
+
+    <form onSubmit="{{ submitOrder }}" style="display:grid;gap:36px">
+
+      <div style="display:grid;gap:14px">
+        <h2 style="font-size:22px;font-weight:800;letter-spacing:-.02em">1 · Choose your size</h2>
+        <sc-for list="{{ sizes }}" as="s" hint-placeholder-count="3">
+          <div onClick="{{ s.select }}" style="display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;cursor:pointer;background:{{ s.bg }};color:{{ s.color }};border:1.5px solid {{ s.border }}">
+            <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap"><span style="font-size:24px;font-weight:800;letter-spacing:-.03em">{{ s.weight }} lb</span><span style="font-size:14.5px;font-weight:500;opacity:.8">{{ s.title }}</span></div>
+            <div style="display:flex;align-items:center;gap:16px"><span style="font-size:18px;font-weight:800;letter-spacing:-.02em">{{ s.price }}</span>
+            <span style="width:20px;height:20px;border-radius:50%;border:1.5px solid {{ s.border }};display:grid;place-items:center"><span style="width:10px;height:10px;border-radius:50%;background:{{ s.dot }}"></span></span></div>
+          </div>
+        </sc-for>
+        <div style="display:flex;align-items:center;gap:16px;padding-top:6px">
+          <span style="font-size:15px;font-weight:700">Quantity</span>
+          <div style="display:flex;align-items:center;border:1.5px solid #E3E5E8;border-radius:999px;overflow:hidden">
+            <button type="button" onClick="{{ qtyDown }}" aria-label="Decrease quantity" style="width:44px;height:44px;border:0;background:#fff;font-size:20px;font-weight:700;cursor:pointer" style-hover="background:#F5F5F3">−</button>
+            <span style="min-width:40px;text-align:center;font-size:16px;font-weight:800">{{ qty }}</span>
+            <button type="button" onClick="{{ qtyUp }}" aria-label="Increase quantity" style="width:44px;height:44px;border:0;background:#fff;font-size:20px;font-weight:700;cursor:pointer" style-hover="background:#F5F5F3">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;gap:14px">
+        <h2 style="font-size:22px;font-weight:800;letter-spacing:-.02em">2 · Your details</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+          <input name="name" autocomplete="name" required="{{ true }}" placeholder="Full name" value="{{ f.name }}" onChange="{{ set.name }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+          <input name="email" type="email" autocomplete="email" required="{{ true }}" placeholder="Email" value="{{ f.email }}" onChange="{{ set.email }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+        </div>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional)" value="{{ f.phone }}" onChange="{{ set.phone }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+      </div>
+
+      <div style="display:grid;gap:14px">
+        <h2 style="font-size:22px;font-weight:800;letter-spacing:-.02em">3 · Delivery address</h2>
+        <input name="address1" autocomplete="address-line1" required="{{ true }}" placeholder="Street address" value="{{ f.address1 }}" onChange="{{ set.address1 }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+        <input name="address2" autocomplete="address-line2" placeholder="Apt, suite, dock, etc. (optional)" value="{{ f.address2 }}" onChange="{{ set.address2 }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px">
+          <input name="city" autocomplete="address-level2" required="{{ true }}" placeholder="City" value="{{ f.city }}" onChange="{{ set.city }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+          <input name="state" autocomplete="address-level1" required="{{ true }}" placeholder="State" value="{{ f.state }}" onChange="{{ set.state }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+          <input name="zip" autocomplete="postal-code" required="{{ true }}" placeholder="ZIP code" value="{{ f.zip }}" onChange="{{ set.zip }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+        </div>
+        <input name="harbor" placeholder="Boat length · harbor (optional, e.g. 34 ft · Casco Bay)" value="{{ f.harbor }}" onChange="{{ set.harbor }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none" style-focus="border-color:#0B1F33">
+        <textarea rows="3" placeholder="Notes for delivery or installation (optional)" value="{{ f.notes }}" onChange="{{ set.notes }}" style="padding:15px 18px;border-radius:12px;border:1.5px solid #E3E5E8;background:#fff;font-size:15px;outline:none;resize:vertical" style-focus="border-color:#0B1F33"></textarea>
+      </div>
+
+      <div style="display:grid;gap:14px">
+        <h2 style="font-size:22px;font-weight:800;letter-spacing:-.02em">4 · Payment</h2>
+        <!-- PAYMENT INTEGRATION POINT: see submitOrder() in the script below. No card fields live on this page;
+             the processor (e.g. Stripe Checkout) collects card details on its own hosted page. -->
+        <div id="payment-slot" style="background:#F5F5F3;border-radius:16px;padding:20px 22px;font-size:15px;line-height:1.55;color:#5A6673;font-weight:500">{{ paymentNote }}</div>
+        <button type="submit" style="padding:18px 22px;border-radius:999px;border:0;background:#F26B0F;color:#fff;font-weight:800;font-size:17px;cursor:pointer" style-hover="background:#0B1F33">{{ submitLabel }}</button>
+        <span style="font-size:12.5px;color:#8A939D;font-weight:500;text-align:center">We never share your details.</span>
+      </div>
+    </form>
+
+    <aside style="position:sticky;top:96px;background:#0B1F33;color:#fff;border-radius:28px;padding:32px;display:grid;gap:22px">
+      <h2 style="font-size:22px;font-weight:800;letter-spacing:-.02em;color:#fff">Order summary</h2>
+      <div style="display:grid;grid-template-columns:96px 1fr;gap:16px;align-items:center">
+        <img src="uploads/anchor-hero.jpg" alt="MoorSafe anchor" style="width:96px;height:96px;object-fit:cover;border-radius:16px;background:#fff">
+        <div style="display:grid;gap:4px"><span style="font-size:18px;font-weight:800">MoorSafe {{ selectedWeight }} lb</span><span style="font-size:14px;color:rgba(255,255,255,.7);font-weight:500">{{ selectedTitle }}</span><span style="font-size:14px;color:rgba(255,255,255,.7);font-weight:500">{{ unitPrice }} × {{ qty }}</span></div>
+      </div>
+      <div style="display:grid;gap:12px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;font-size:15px;font-weight:600">
+        <div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,.7)">Subtotal</span><span>{{ subtotal }}</span></div>
+        <div style="display:flex;justify-content:space-between"><span style="color:rgba(255,255,255,.7)">Shipping</span><span>{{ shippingNote }}</span></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(255,255,255,.15);padding-top:20px"><span style="font-size:15px;font-weight:700">Total</span><span style="font-size:34px;font-weight:800;letter-spacing:-.03em">{{ subtotal }}</span></div>
+      <div style="display:grid;gap:10px;font-size:14px;color:rgba(255,255,255,.75);font-weight:600;border-top:1px solid rgba(255,255,255,.15);padding-top:20px">
+        <div style="display:flex;gap:12px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#F26B0F;flex:none"></span>Made in Maine · Patent pending</div>
+        <div style="display:flex;gap:12px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#F26B0F;flex:none"></span>Tested at Yale Cordage &amp; 28 days in Casco Bay</div>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<footer style="background:#fff;padding:24px 24px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid #ECEDEE;padding-top:28px;font-size:14px;color:#8A939D;font-weight:500">
+    <img src="assets/logo-transparent.png" alt="MoorSafe" style="height:22px">
+    <div style="display:flex;gap:24px;flex-wrap:wrap">
+      <a href="index.html" style="color:#5A6673">Home</a>
+      <a href="solution.html#video" style="color:#5A6673">The Solution</a>
+      <a href="info-packet.html" style="color:#5A6673">Info packet</a>
+      <a href="blog.html" style="color:#5A6673">Blog</a>
+      <a href="mailto:{{ contactEmail }}" style="color:#5A6673">{{ contactEmail }}</a>
+    </div>
+    <span>© {{ year }} MoorSafe · Patent pending · In memory of Capt. Gregory Smith</span>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;price300&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$1,895&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price400&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,295&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;price500&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$2,695&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Pricing&quot;},&quot;paymentEndpoint&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+class Component extends DCLogic {
+  state = {
+    size: (() => { const s = parseInt(new URLSearchParams(window.location.search).get('size'), 10); return [300, 400, 500].includes(s) ? s : 300; })(),
+    qty: 1,
+    f: { name: '', email: '', phone: '', address1: '', address2: '', city: '', state: '', zip: '', harbor: '', notes: '' }
+  };
+  renderVals() {
+    const email = this.props.contactEmail ?? 'hello@moorsafe.com';
+    const endpoint = this.props.paymentEndpoint ?? '';
+    const money = n => '$' + n.toLocaleString('en-US');
+    const num = s => parseInt(String(s).replace(/[^0-9]/g, ''), 10) || 0;
+    const defs = [
+      { weight: 300, title: 'Boats up to ~30 ft', price: num(this.props.price300 ?? '$1,895') },
+      { weight: 400, title: 'Boats ~30–40 ft', price: num(this.props.price400 ?? '$2,295') },
+      { weight: 500, title: 'Boats 40 ft+ or exposed harbors', price: num(this.props.price500 ?? '$2,695') }
+    ];
+    const { size, qty } = this.state;
+    const cur = defs.find(d => d.weight === size);
+    const sizes = defs.map(d => {
+      const on = d.weight === size;
+      return { weight: String(d.weight), title: d.title, price: money(d.price), select: () => this.setState({ size: d.weight }),
+        bg: on ? '#0B1F33' : '#fff', color: on ? '#fff' : '#0B1F33', border: on ? '#0B1F33' : '#E3E5E8', dot: on ? '#F26B0F' : 'transparent' };
+    });
+    const set = {};
+    for (const k of Object.keys(this.state.f)) set[k] = (e) => this.setState(s => ({ f: { ...s.f, [k]: e.target.value } }));
+    const subtotalNum = cur.price * qty;
+    return {
+      sizes, set, f: this.state.f, qty: String(qty),
+      qtyDown: () => this.setState(s => ({ qty: Math.max(1, s.qty - 1) })),
+      qtyUp: () => this.setState(s => ({ qty: Math.min(20, s.qty + 1) })),
+      selectedWeight: String(size), selectedTitle: cur.title, unitPrice: money(cur.price), subtotal: money(subtotalNum),
+      shippingNote: 'Calculated at payment',
+      submitLabel: endpoint ? 'Continue to secure payment' : 'Send order request',
+      paymentNote: endpoint
+        ? 'You’ll finish payment on our secure payment page. Card details are entered there, never on this site.'
+        : 'Online payment is coming soon. For now, send your order request and we’ll confirm the details and payment with you by email.',
+      contactEmail: email,
+      year: new Date().getFullYear(),
+      submitOrder: async (e) => {
+        e.preventDefault();
+        const f = this.state.f;
+        const order = { size: size, quantity: qty, unitPrice: cur.price, subtotal: subtotalNum, customer: f };
+        /* PAYMENT INTEGRATION: set the paymentEndpoint prop to a server route (e.g. a Vercel function at /api/checkout)
+           that creates a Stripe Checkout Session from `order` and returns { url }. The price must be recomputed on the
+           server from `size` and `quantity` - never trust the totals sent from the browser. */
+        if (endpoint) {
+          try {
+            const res = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(order) });
+            const data = await res.json();
+            if (data.url) { window.location.href = data.url; return; }
+          } catch (err) { /* fall through to the email fallback below */ }
+        }
+        const body = `Order request\n\nMoorSafe ${size} lb × ${qty} (${money(cur.price)} each) — ${money(subtotalNum)}\n\nName: ${f.name}\nEmail: ${f.email}\nPhone: ${f.phone}\n\nShip to:\n${f.address1}\n${f.address2}\n${f.city}, ${f.state} ${f.zip}\n\nBoat / harbor: ${f.harbor}\nNotes: ${f.notes}`;
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent('MoorSafe order — ' + size + ' lb × ' + qty)}&body=${encodeURIComponent(body)}`;
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

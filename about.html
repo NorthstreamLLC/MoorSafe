@@ -127,7 +127,7 @@ nav>div{gap:8px!important}.nv-links{gap:12px!important;font-size:13.5px!importan
   </div>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;solution.html#buy&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;checkout.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
 class Component extends DCLogic {
   state = { intent: 'Request a quote', f: { name: '', email: '', role: 'Boat owner', harbor: '', message: '' } };
   renderVals() {
@@ -142,7 +142,7 @@ class Component extends DCLogic {
     return {
       intents, set, f: this.state.f,
       submitLabel: this.state.intent === 'Ask a question' ? 'Send question' : this.state.intent,
-      checkoutUrl: this.props.checkoutUrl ?? 'solution.html#buy',
+      checkoutUrl: this.props.checkoutUrl ?? 'checkout.html',
       contactEmail: email,
       year: new Date().getFullYear(),
       submitQuote: (e) => {
