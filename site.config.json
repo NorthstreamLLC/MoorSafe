@@ -3,6 +3,7 @@
   "siteName": "MoorSafe",
   "email": "hello@moorsafe.com",
   "prices": { "300": 1895, "400": 2295, "500": 2695 },
+  "purchase": false,
   "formEndpoint": "",
   "paymentEndpoint": "",
   "analytics": { "vercel": false, "gaId": "" },

@@ -9,6 +9,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = p => fs.readFileSync(path.join(ROOT, p), 'utf8');
 const cfg = JSON.parse(read('site.config.json'));
 const SITE = cfg.siteUrl.replace(/\/$/, '');
+const PURCHASE = !!cfg.purchase;
+const CTA_LABEL = PURCHASE ? 'Buy now' : 'Request a quote', CTA_HREF = PURCHASE ? '/checkout' : '/contact';
 const money = n => '$' + Number(n).toLocaleString('en-US');
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const year = new Date().getFullYear();
@@ -38,7 +40,7 @@ const navHtml = (active, name) => {
   <a class="nv-logo" href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="120" height="26"></a>
   <div class="nv-links">${NAV.map(l => a(l)).join('')}</div>
   <details class="nv-menu"><summary>Menu</summary><div class="nv-drop">${[...NAV, ...MENU_EXTRA].map(l => a(l)).join('')}</div></details>
-  <a class="nv-buy" href="/checkout">Buy now</a>
+  <a class="nv-buy" href="${CTA_HREF}">${CTA_LABEL}</a>
 </div></nav>`;
 };
 const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px">
@@ -72,6 +74,9 @@ const imgSize = f => {
 const tok = html => html.replace(/{{price(300|400|500)}}/g, (_, w) => money(cfg.prices[w])).split('{{email}}').join(cfg.email);
 
 function fix(html, { firstImgEager }) {
+  html = html.replace(/<!--if:purchase-->([\s\S]*?)<!--endif-->/g, (m, inner) => (PURCHASE ? inner : ''));
+  html = html.split('{{ctaLabel}}').join(CTA_LABEL).split('{{ctaHref}}').join(CTA_HREF);
+  html = html.split('{{buyLabel}}').join(PURCHASE ? `Buy 300 lb — ${money(cfg.prices[300])}` : 'Request a quote for 300 lb');
   html = html.replace(/<!--@sizes-->/g, sizeRows());
   html = html.replace(/\{\{price(300|400|500)\}\}/g, (_, w) => money(cfg.prices[w]));
   html = html.split('{{paymentNote}}').join(cfg.paymentEndpoint
@@ -179,12 +184,14 @@ for (const file of walk(pagesDir)) {
   const mm = raw.match(/^<!--META\s*([\s\S]*?)-->\s*/);
   if (!mm) { problems.push(rel + ': missing META block'); continue; }
   const meta = JSON.parse(mm[1]);
+  const outFile = path.join(ROOT, path.relative(pagesDir, file).replace(/\\/g, '/').replace(/\.html$/, '') + '.html');
+  if (meta.requires === 'purchase' && !PURCHASE) { fs.rmSync(outFile, { force: true }); continue; }
   const name = rel.replace(/\.html$/, '');
   const url = meta.path || (name === 'index' ? '/' : '/' + name);
   const body = fix(raw.slice(mm[0].length), { firstImgEager: !!meta.eagerFirstImage });
   const active = meta.nav || name.split('/')[0];
   const mobileBar = ''; // the home page fragment carries its own #mobile-buy bar
-  const clientCfg = JSON.stringify({ email: cfg.email, prices: cfg.prices, formEndpoint: cfg.formEndpoint, paymentEndpoint: cfg.paymentEndpoint });
+  const clientCfg = JSON.stringify({ purchase: PURCHASE, email: cfg.email, prices: cfg.prices, formEndpoint: cfg.formEndpoint, paymentEndpoint: cfg.paymentEndpoint });
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>

@@ -37,8 +37,8 @@
     $$('[data-sel-price]').forEach(function (e) { e.textContent = money(p); });
     $$('[data-sel-title]').forEach(function (e) { e.textContent = TITLES[state.size]; });
     $$('[data-buy]').forEach(function (a) {
-      a.setAttribute('href', '/checkout?size=' + state.size);
-      if (a.hasAttribute('data-buy-label')) a.textContent = 'Buy ' + state.size + ' lb — ' + money(p);
+      a.setAttribute('href', (C.purchase ? '/checkout' : '/contact') + '?size=' + state.size);
+      if (a.hasAttribute('data-buy-label')) a.textContent = C.purchase ? 'Buy ' + state.size + ' lb — ' + money(p) : 'Request a quote for ' + state.size + ' lb';
     });
     $$('[data-qty]').forEach(function (e) { e.textContent = state.qty; });
     $$('[data-unit]').forEach(function (e) { e.textContent = money(p); });
@@ -53,6 +53,12 @@
   $$('[data-qty-dec]').forEach(function (b) { b.addEventListener('click', function () { state.qty = Math.max(1, state.qty - 1); paint(); }); });
   $$('[data-qty-inc]').forEach(function (b) { b.addEventListener('click', function () { state.qty = Math.min(20, state.qty + 1); paint(); }); });
   paint();
+
+  /* quote form: prefill the message when arriving with ?size= */
+  (function () {
+    var m = $('form[data-form=quote] [name=message]');
+    if (m && q && PRICES[q] && !m.value) m.value = 'I’m interested in the ' + q + ' lb MoorSafe. Boat length / harbor: ';
+  })();
 
   /* ---------- "which size?" helper ---------- */
   $$('[data-helper]').forEach(function (form) {

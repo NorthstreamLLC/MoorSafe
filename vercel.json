@@ -46,6 +46,11 @@
       "source": "/posts/:slug",
       "destination": "/blog",
       "permanent": true
+    },
+    {
+      "source": "/checkout",
+      "destination": "/contact",
+      "permanent": false
     }
   ],
   "headers": [
