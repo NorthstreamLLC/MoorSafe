@@ -1,0 +1,98 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/product",
+      "destination": "/solution",
+      "permanent": true
+    },
+    {
+      "source": "/why",
+      "destination": "/solution#tests",
+      "permanent": true
+    },
+    {
+      "source": "/videos",
+      "destination": "/solution#video",
+      "permanent": true
+    },
+    {
+      "source": "/journal",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/posts/yale-cordage-test",
+      "destination": "/blog/yale-cordage-tensile-test",
+      "permanent": true
+    },
+    {
+      "source": "/posts/casco-bay",
+      "destination": "/blog/28-days-in-casco-bay",
+      "permanent": true
+    },
+    {
+      "source": "/posts/for-captain-smith",
+      "destination": "/blog/captain-gregory-smith",
+      "permanent": true
+    },
+    {
+      "source": "/posts/:slug",
+      "destination": "/blog",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)\\.(css|js)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(assets|uploads)/(.*)\\.(png|jpg|jpeg|webp|svg|mp4)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/favicon.ico",
+      "destination": "/assets/favicon.png"
+    }
+  ]
+}

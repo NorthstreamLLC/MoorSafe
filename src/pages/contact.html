@@ -1,0 +1,51 @@
+<!--META
+{
+ "title": "Contact MoorSafe: Request a Quote or Ask a Question",
+ "description": "Request a MoorSafe quote, ask a technical question or get the info packet. A real person in Maine replies within one business day.",
+ "path": "/contact",
+ "nav": "contact",
+ "priority": "0.7",
+ "crumb": "Contact",
+ "schema": [
+  {
+   "@type": "ContactPage",
+   "name": "Contact MoorSafe",
+   "url": "https://moorsafesolutions.com/contact"
+  }
+ ]
+}
+-->
+<header style="background:#fff;padding:150px 24px 32px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:18px"><p class="crumbs"><a href="/">Home</a> / Contact</p><span class="eyebrow">Get in touch</span><h1 style="font-size:clamp(40px,5.6vw,80px);font-weight:800;color:#0B1F33;max-width:16ch">Tell us about your harbor.</h1></div></header>
+<section id="quote" style="background:#fff;padding:24px 24px 120px;scroll-margin-top:40px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:56px;align-items:start">
+    <div style="display:grid;gap:24px">
+      <p class="lede">Request a quote, get the info packet, or ask a technical question. Your message goes to a real person, and we reply within one business day.</p>
+      <div style="display:grid;border-top:1px solid #E3E5E8">
+        <a href="mailto:{{email}}" style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #E3E5E8;font-size:16px"><span style="color:#5A6673;font-weight:500">Email</span><span style="font-weight:700">{{email}}</span></a>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #E3E5E8;font-size:16px"><span style="color:#5A6673;font-weight:500">Based in</span><span style="font-weight:700">Maine, USA</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid #E3E5E8;font-size:16px"><span style="color:#5A6673;font-weight:500">Hours</span><span style="font-weight:700">Mon–Fri, 9–5 ET</span></div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="/checkout">Ready to order? Buy now</a><a class="btn-ghost" href="/faq">Read the FAQ</a></div>
+      <p style="font-size:15px;color:#5A6673;font-weight:500">Harbormaster or mooring service? See <a href="/pros" style="color:#0B1F33;font-weight:700;border-bottom:2px solid #F26B0F">fleet pricing and presentations</a>.</p>
+    </div>
+    <form data-form="quote" style="background:#F5F5F3;border-radius:28px;padding:36px;display:grid;gap:14px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap" role="group" aria-label="What can we help with?">
+        <button type="button" data-intent="Request a quote" aria-pressed="true" style="padding:9px 16px;border-radius:999px;border:1.5px solid #0B1F33;background:#0B1F33;color:#fff;font-size:13.5px;font-weight:700;cursor:pointer">Request a quote</button>
+        <button type="button" data-intent="Send me the info packet" aria-pressed="false" style="padding:9px 16px;border-radius:999px;border:1.5px solid #E3E5E8;background:#fff;color:#3C4854;font-size:13.5px;font-weight:700;cursor:pointer">Send me the info packet</button>
+        <button type="button" data-intent="Ask a question" aria-pressed="false" style="padding:9px 16px;border-radius:999px;border:1.5px solid #E3E5E8;background:#fff;color:#3C4854;font-size:13.5px;font-weight:700;cursor:pointer">Ask a question</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+        <label for="c-name" class="sr-only">Name</label><input id="c-name" name="name" autocomplete="name" required placeholder="Name" class="field">
+        <label for="c-email" class="sr-only">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required placeholder="Email" class="field">
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+        <label for="c-role" class="sr-only">Your role</label><select id="c-role" name="role" class="field"><option>Boat owner</option><option>Harbormaster</option><option>Mooring service / marina</option><option>Dealer / distributor</option><option>Something else</option></select>
+        <label for="c-harbor" class="sr-only">Boat length and harbor</label><input id="c-harbor" name="harbor" placeholder="Boat length · harbor (e.g. 34 ft · Casco Bay)" class="field">
+      </div>
+      <label for="c-msg" class="sr-only">Message</label><textarea id="c-msg" name="message" rows="4" placeholder="Sizing, pricing, installation, distribution — anything." class="field" style="resize:vertical"></textarea>
+      <button type="submit" class="btn" style="width:100%;background:#0B1F33" data-submit-label>Request a quote</button>
+      <p data-form-msg hidden role="status" style="font-size:15px;font-weight:600;color:#0B1F33"></p>
+      <span style="font-size:12.5px;color:#8A939D;font-weight:500;text-align:center">We never share your address.</span>
+    </form>
+  </div></section>

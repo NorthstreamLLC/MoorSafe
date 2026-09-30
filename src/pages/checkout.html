@@ -1,0 +1,89 @@
+<!--META
+{
+ "title": "Checkout | MoorSafe",
+ "description": "Choose your MoorSafe size, enter your delivery details and send your order. Shipping is quoted by destination.",
+ "path": "/checkout",
+ "nav": "none",
+ "noindex": true,
+ "noCrumbs": true
+}
+-->
+<header data-screen-label="Checkout intro" style="background: rgb(255, 255, 255); padding: 130px 24px 24px;">
+  <div style="max-width: 1200px; margin: 0px auto; display: grid; gap: 14px;">
+    <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(242, 107, 15);">Checkout</span>
+    <h1 style="font-size: clamp(38px, 5vw, 68px); font-weight: 800; color: rgb(11, 31, 51);">Order your MoorSafe.</h1>
+    <p style="font-size: 17px; line-height: 1.55; color: rgb(90, 102, 115); font-weight: 500; max-width: 56ch;">Pick your size, tell us where to send it, and we'll take it from there. Not sure which size fits your boat? <a href="contact.html" style="color: rgb(11, 31, 51); font-weight: 700; border-bottom: 2px solid rgb(242, 107, 15);">Request a quote</a> and we'll confirm it for your harbor.</p>
+  </div></header><section id="order" data-screen-label="Order form" style="background: rgb(255, 255, 255); padding: 24px 24px 120px;">
+  <div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
+
+    <form data-form="order" style="display: grid; gap: 36px;">
+
+      <div style="display: grid; gap: 14px;">
+        <h2 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em;">1 · Choose your size</h2>
+        
+          <!--@sizes-->
+        
+          
+        
+          
+        
+        <div style="display: flex; align-items: center; gap: 16px; padding-top: 6px;">
+          <span style="font-size: 15px; font-weight: 700;">Quantity</span>
+          <div style="display: flex; align-items: center; border: 1.5px solid rgb(227, 229, 232); border-radius: 999px; overflow: hidden;">
+            <button type="button" data-qty-dec aria-label="Decrease quantity" style="width: 44px; height: 44px; border: 0px; background: rgb(255, 255, 255); font-size: 20px; font-weight: 700; cursor: pointer;" class="h-g2">−</button>
+            <span data-qty aria-live="polite" style="min-width: 40px; text-align: center; font-size: 16px; font-weight: 800;">1</span>
+            <button type="button" data-qty-inc aria-label="Increase quantity" style="width: 44px; height: 44px; border: 0px; background: rgb(255, 255, 255); font-size: 20px; font-weight: 700; cursor: pointer;" class="h-g2">+</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; gap: 14px;">
+        <h2 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em;">2 · Your details</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+          <input name="name" autocomplete="name" required placeholder="Full name" aria-label="Full name" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+          <input name="email" type="email" autocomplete="email" required placeholder="Email" aria-label="Email" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+        </div>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional)" aria-label="Phone (optional)" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+      </div>
+
+      <div style="display: grid; gap: 14px;">
+        <h2 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em;">3 · Delivery address</h2>
+        <input name="address1" autocomplete="address-line1" required placeholder="Street address" aria-label="Street address" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+        <input name="address2" autocomplete="address-line2" placeholder="Apt, suite, dock, etc. (optional)" aria-label="Apt, suite, dock, etc. (optional)" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px;">
+          <input name="city" autocomplete="address-level2" required placeholder="City" aria-label="City" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+          <input name="state" autocomplete="address-level1" required placeholder="State" aria-label="State" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+          <input name="zip" autocomplete="postal-code" required placeholder="ZIP code" aria-label="ZIP code" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+        </div>
+        <input name="harbor" placeholder="Boat length · harbor (optional, e.g. 34 ft · Casco Bay)" aria-label="Boat length · harbor (optional, e.g. 34 ft · Casco Bay)" value="" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none;" class="f-n">
+        <textarea rows="3" placeholder="Notes for delivery or installation (optional)" aria-label="Notes for delivery or installation (optional)" style="padding: 15px 18px; border-radius: 12px; border: 1.5px solid rgb(227, 229, 232); background: rgb(255, 255, 255); font-size: 15px; outline: none; resize: vertical;" class="f-n"></textarea>
+      </div>
+
+      <div style="display: grid; gap: 14px;">
+        <h2 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em;">4 · Payment</h2>
+        
+        <div id="payment-slot" style="background: rgb(245, 245, 243); border-radius: 16px; padding: 20px 22px; font-size: 15px; line-height: 1.55; color: rgb(90, 102, 115); font-weight: 500;">{{paymentNote}}</div>
+        <button type="submit" style="padding: 18px 22px; border-radius: 999px; border: 0px; background: rgb(242, 107, 15); color: rgb(255, 255, 255); font-weight: 800; font-size: 17px; cursor: pointer;" class="h-n2">{{submitLabel}}</button>
+        <p data-form-msg hidden role="status" style="font-size:15px;font-weight:600;color:#0B1F33"></p>
+        <span style="font-size: 12.5px; color: rgb(138, 147, 157); font-weight: 500; text-align: center;">We never share your details.</span>
+      </div>
+    </form>
+
+    <aside style="position: sticky; top: 96px; background: rgb(11, 31, 51); color: rgb(255, 255, 255); border-radius: 28px; padding: 32px; display: grid; gap: 22px;">
+      <h2 style="font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: rgb(255, 255, 255);">Order summary</h2>
+      <div style="display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center;">
+        <img src="uploads/anchor-hero.jpg" alt="MoorSafe mooring anchor" style="width: 96px; height: 96px; object-fit: cover; border-radius: 16px; background: rgb(255, 255, 255);">
+        <div style="display: grid; gap: 4px;"><span style="font-size: 18px; font-weight: 800;">MoorSafe <span data-sel-weight>300</span> lb</span><span data-sel-title style="font-size: 14px; color: rgba(255, 255, 255, 0.7); font-weight: 500;">Boats up to ~30 ft</span><span style="font-size: 14px; color: rgba(255, 255, 255, 0.7); font-weight: 500;"><span data-unit>{{price300}}</span> × <span data-qty>1</span></span></div>
+      </div>
+      <div style="display: grid; gap: 12px; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px; font-size: 15px; font-weight: 600;">
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(255, 255, 255, 0.7);">Subtotal</span><span data-subtotal>{{price300}}</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(255, 255, 255, 0.7);">Shipping</span><span>Quoted by destination</span></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px;"><span style="font-size: 15px; font-weight: 700;">Total before shipping</span><span data-subtotal style="font-size: 34px; font-weight: 800; letter-spacing: -0.03em;">{{price300}}</span></div>
+      <div style="display: grid; gap: 10px; font-size: 14px; color: rgba(255, 255, 255, 0.75); font-weight: 600; border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 20px;">
+        <div style="display: flex; gap: 12px; align-items: center;"><span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(242, 107, 15); flex: 0 0 auto;"></span>Made in Maine · Patent pending</div>
+        <div style="display: flex; gap: 12px; align-items: center;"><span style="width: 6px; height: 6px; border-radius: 50%; background: rgb(242, 107, 15); flex: 0 0 auto;"></span>Tested at Yale Cordage &amp; 28 days in Casco Bay</div>
+      </div>
+    </aside>
+
+  </div></section>
