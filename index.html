@@ -226,5 +226,19 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script>
+/* Pages render client-side, so the browser's native #hash jump fires before the target exists. Re-jump once it does. */
+(function(){
+  function go(){
+    var id=decodeURIComponent(location.hash.slice(1)); if(!id) return true;
+    var el=document.getElementById(id); if(!el) return false;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-(parseInt(getComputedStyle(el).scrollMarginTop)||0);
+    window.scrollTo({top:y,behavior:'instant'}); return true;
+  }
+  var tries=0,t=setInterval(function(){ if(go()||++tries>40) clearInterval(t); },100);
+  window.addEventListener('load',function(){setTimeout(go,300);});
+  window.addEventListener('hashchange',go);
+})();
+</script>
 </body>
 </html>
