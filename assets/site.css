@@ -5,6 +5,7 @@ a{color:#0B1F33;text-decoration:none}a:hover{color:#F26B0F}
 h1,h2,h3{margin:0;letter-spacing:-.035em;line-height:1;text-wrap:balance}
 p{margin:0;text-wrap:pretty}
 img,video{display:block;max-width:100%}
+img{height:auto}
 input,select,textarea,button{font:inherit}
 summary{cursor:pointer;list-style:none}summary::-webkit-details-marker{display:none}
 a,button{transition:color .15s,background-color .15s,border-color .15s}
