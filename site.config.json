@@ -1,0 +1,11 @@
+{
+  "siteUrl": "https://moorsafesolutions.com",
+  "siteName": "MoorSafe",
+  "email": "hello@moorsafe.com",
+  "prices": { "300": 1895, "400": 2295, "500": 2695 },
+  "formEndpoint": "",
+  "paymentEndpoint": "",
+  "analytics": { "vercel": false, "gaId": "" },
+  "ogImage": "/assets/og-image.png"
+}
+

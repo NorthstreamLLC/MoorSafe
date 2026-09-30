@@ -1,160 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<title>Blog — MoorSafe</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/logo-transparent.png">
+<title>The MoorSafe Journal: Notes From the Mooring Field</title>
+<meta name="description" content="Testing, harbor practice and what we are learning as MoorSafe goes into the water: the Yale Cordage tensile test, Casco Bay field test and more.">
+<link rel="canonical" href="https://moorsafesolutions.com/blog">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#0B1F33">
+<meta property="og:site_name" content="MoorSafe">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The MoorSafe Journal: Notes From the Mooring Field">
+<meta property="og:description" content="Testing, harbor practice and what we are learning as MoorSafe goes into the water: the Yale Cordage tensile test, Casco Bay field test and more.">
+<meta property="og:url" content="https://moorsafesolutions.com/blog">
+<meta property="og:image" content="https://moorsafesolutions.com/assets/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The MoorSafe mooring anchor: a mushroom anchor with a three-bar cone that prevents chain wrap">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The MoorSafe Journal: Notes From the Mooring Field">
+<meta name="twitter:description" content="Testing, harbor practice and what we are learning as MoorSafe goes into the water: the Yale Cordage tensile test, Casco Bay field test and more.">
+<meta name="twitter:image" content="https://moorsafesolutions.com/assets/og-image.png">
+<link rel="icon" href="/assets/favicon.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="/assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-html,body{margin:0;padding:0;background:#fff;color:#0B1F33;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
-*{box-sizing:border-box}
-a{color:#0B1F33;text-decoration:none}a:hover{color:#F26B0F}
-h1,h2,h3{margin:0;letter-spacing:-.035em;line-height:1.05;text-wrap:balance}
-p{margin:0;text-wrap:pretty}
-img,video{display:block;max-width:100%}
-input,button{font:inherit}
-@media (max-width:640px){
-.nv-hide{display:none!important}
-nav>div{gap:8px!important}.nv-links{gap:12px!important;font-size:13.5px!important}
-.nv-logo{flex:none!important}.nv-logo img{height:20px!important;width:auto!important}
-.nv-buy{padding:8px 12px!important;font-size:13px!important}
-}
-</style>
-</helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v=5190171e">
 
-<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:16px 24px;pointer-events:none">
-  <div style="pointer-events:auto;width:100%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-radius:999px;padding:8px 10px 8px 20px;box-shadow:0 1px 0 rgba(11,31,51,.06),0 12px 40px rgba(11,31,51,.10)">
-    <a class="nv-logo" href="index.html" style="display:flex;align-items:center"><img src="assets/logo-transparent.png" alt="MoorSafe" style="height:26px"></a>
-    <div class="nv-links" style="display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;color:#3C4854;white-space:nowrap">
-      <a href="solution.html#video" style="color:#3C4854" style-hover="color:#F26B0F">The Solution</a>
-      <a class="nv-hide" href="solution.html#tests" style="color:#3C4854" style-hover="color:#F26B0F">Proof</a>
-      <a class="nv-hide" href="solution.html#buy" style="color:#3C4854" style-hover="color:#F26B0F">Pricing</a>
-      <a href="about.html" style="color:#3C4854" style-hover="color:#F26B0F">About</a>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://moorsafesolutions.com/#org","name":"MoorSafe","url":"https://moorsafesolutions.com/","email":"hello@moorsafe.com","logo":{"@type":"ImageObject","url":"https://moorsafesolutions.com/assets/logo-transparent.png"},"description":"MoorSafe makes a mushroom mooring anchor with a conical, patent-pending design that prevents chain wrap. Designed and made in Maine.","address":{"@type":"PostalAddress","addressRegion":"ME","addressCountry":"US"},"founder":[{"@type":"Person","name":"Scott Karkos"},{"@type":"Person","name":"Captain Gregory Smith"}]},{"@type":"Blog","name":"The MoorSafe Journal","url":"https://moorsafesolutions.com/blog","blogPost":[{"@type":"BlogPosting","headline":"What 40,657 pounds looks like: inside the Yale Cordage tensile test","url":"https://moorsafesolutions.com/blog/yale-cordage-tensile-test","datePublished":"2026-09-01"},{"@type":"BlogPosting","headline":"28 days on the bottom of Casco Bay","url":"https://moorsafesolutions.com/blog/28-days-in-casco-bay","datePublished":"2026-08-01"},{"@type":"BlogPosting","headline":"Why a swivel doesn't stop chain wrap","url":"https://moorsafesolutions.com/blog/swivel-chain-wrap","datePublished":"2026-07-01"},{"@type":"BlogPosting","headline":"In memory of Captain Gregory Smith","url":"https://moorsafesolutions.com/blog/captain-gregory-smith","datePublished":"2026-06-01"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://moorsafesolutions.com/"},{"@type":"ListItem","position":2,"name":"Journal","item":"https://moorsafesolutions.com/blog"}]}]}</script>
+
+</head>
+<body class="blog">
+<a class="skip" href="#main">Skip to content</a>
+<nav class="nv" aria-label="Main"><div class="nv-pill">
+  <a class="nv-logo" href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="120" height="26"></a>
+  <div class="nv-links"><a href="/solution#video">The Solution</a><a href="/solution#tests">Proof</a><a href="/solution#buy">Pricing</a><a href="/pros">For Pros</a><a href="/faq">FAQ</a><a href="/about">About</a></div>
+  <details class="nv-menu"><summary>Menu</summary><div class="nv-drop"><a href="/solution#video">The Solution</a><a href="/solution#tests">Proof</a><a href="/solution#buy">Pricing</a><a href="/pros">For Pros</a><a href="/faq">FAQ</a><a href="/about">About</a><a href="/blog" aria-current="page">Journal</a><a href="/contact">Contact</a></div></details>
+  <a class="nv-buy" href="/checkout">Buy now</a>
+</div></nav>
+<main id="main">
+<header style="background:#fff;padding:150px 24px 48px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;gap:18px"><p class="crumbs"><a href="/">Home</a> / Journal</p><span class="eyebrow">Journal</span><h1 style="font-size:clamp(40px,5.6vw,80px);font-weight:800;color:#0B1F33;max-width:14ch">Notes from the mooring field.</h1><p class="lede">Testing, harbor practice, and what we're learning as MoorSafe goes into the water.</p></div></header>
+<section style="background:#fff;padding:0 24px 120px"><div style="max-width:1200px;margin:0 auto;display:grid;gap:16px">
+  <a href="/blog/yale-cordage-tensile-test" style="display:grid;gap:12px;padding:40px;background:#0B1F33;color:#fff;border-radius:24px;align-content:start" class="h-bo2"><span class="eyebrow" style="font-size:12px">Testing · <time datetime="2026-09-01">Sep 2026</time> · 4 min</span><h2 style="font-size:clamp(28px,3.4vw,44px);font-weight:800;line-height:1.15">What 40,657 pounds looks like: inside the Yale Cordage tensile test</h2><p style="font-size:17px;line-height:1.55;font-weight:500;opacity:.8">We put a 300 lb traditional mushroom and a 300 lb MoorSafe prototype on a 100-foot test bed and pulled until something broke. Here is what happened.</p><span style="font-weight:700;font-size:15px;color:#fff">Read →</span></a>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+    <a href="/blog/28-days-in-casco-bay" style="display:grid;gap:12px;padding:28px;background:#F5F5F3;color:#0B1F33;border-radius:24px;align-content:start" class="h-g"><span class="eyebrow" style="font-size:12px">Field test · <time datetime="2026-08-01">Aug 2026</time> · 3 min</span><h2 style="font-size:22px;font-weight:800;line-height:1.15">28 days on the bottom of Casco Bay</h2><p style="font-size:15.5px;line-height:1.55;font-weight:500;opacity:.75">Two anchors, one muddy seabed, a lobster boat, and a diver. Why MoorSafe came up fully buried — and why that matters more than the breakout number.</p><span style="font-weight:700;font-size:15px;color:#0B1F33">Read →</span></a>
+    <a href="/blog/swivel-chain-wrap" style="display:grid;gap:12px;padding:28px;background:#F5F5F3;color:#0B1F33;border-radius:24px;align-content:start" class="h-g"><span class="eyebrow" style="font-size:12px">Harbor practice · <time datetime="2026-07-01">Jul 2026</time> · 3 min</span><h2 style="font-size:22px;font-weight:800;line-height:1.15">Why a swivel doesn't stop chain wrap</h2><p style="font-size:15.5px;line-height:1.55;font-weight:500;opacity:.75">Swivels and bridles reduce twist in the chain. They do nothing about the vertical post the chain wraps around.</p><span style="font-weight:700;font-size:15px;color:#0B1F33">Read →</span></a>
+    <a href="/blog/captain-gregory-smith" style="display:grid;gap:12px;padding:28px;background:#F5F5F3;color:#0B1F33;border-radius:24px;align-content:start" class="h-g"><span class="eyebrow" style="font-size:12px">Company · <time datetime="2026-06-01">Jun 2026</time> · 2 min</span><h2 style="font-size:22px;font-weight:800;line-height:1.15">In memory of Captain Gregory Smith</h2><p style="font-size:15.5px;line-height:1.55;font-weight:500;opacity:.75">MoorSafe exists because Greg spent twenty years watching chain wrap ruin seasons and knew exactly what the fix had to look like.</p><span style="font-weight:700;font-size:15px;color:#0B1F33">Read →</span></a>
+  </div></div></section>
+
+</main>
+<footer style="background:#fff;padding:48px 24px 56px">
+  <div style="max-width:1200px;margin:0 auto;border-top:1px solid #ECEDEE;padding-top:32px;display:grid;gap:28px;font-size:14px;color:#8A939D;font-weight:500">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
+      <a href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="103" height="22" style="height:22px;width:auto"></a>
+      <nav aria-label="Footer" style="display:flex;gap:10px 24px;flex-wrap:wrap">
+        <a href="/" style="color:#5A6673">Home</a><a href="/solution#video" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:hello@moorsafe.com" style="color:#5A6673">hello@moorsafe.com</a>
+      </nav>
     </div>
-    <a class="nv-buy" href="{{ checkoutUrl }}" style="background:#0B1F33;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap" style-hover="background:#F26B0F;color:#fff">Buy now</a>
-  </div>
-</nav>
-
-<header data-screen-label="Blog index" style="background:#fff;padding:160px 24px 64px">
-  <div style="max-width:1200px;margin:0 auto;display:grid;gap:20px">
-    <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F26B0F">Journal</span>
-    <h1 style="font-size:clamp(40px,5.6vw,80px);font-weight:800">Notes from the mooring field.</h1>
-    <p style="font-size:18px;line-height:1.55;color:#5A6673;font-weight:500;max-width:52ch">Testing, harbor practice, and what we're learning as MoorSafe goes into the water.</p>
-  </div>
-</header>
-
-<!-- Featured -->
-<section style="background:#fff;padding:0 24px 24px">
-  <a href="#post-1" onClick="{{ posts.0.open }}" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;background:#0B1F33;border-radius:28px;overflow:hidden;color:#fff" style-hover="color:#fff">
-    <video autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" poster="uploads/anchor-hero.jpg" style="width:100%;height:100%;min-height:320px;object-fit:cover"><source src="uploads/hero-video.mp4" type="video/mp4"></video>
-    <div style="padding:clamp(28px,4vw,56px);display:grid;gap:18px;align-content:center">
-      <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F26B0F">{{ posts.0.tag }} · {{ posts.0.date }}</span>
-      <h2 style="font-size:clamp(28px,3.2vw,44px);font-weight:800">{{ posts.0.title }}</h2>
-      <p style="font-size:16px;line-height:1.6;color:rgba(255,255,255,.72);font-weight:500">{{ posts.0.excerpt }}</p>
-      <span style="font-weight:700;border-bottom:2px solid #F26B0F;padding-bottom:4px;justify-self:start">Read →</span>
-    </div>
-  </a>
-</section>
-
-<!-- Grid -->
-<section style="background:#fff;padding:24px 24px 120px">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
-    <sc-for list="{{ rest }}" as="p" hint-placeholder-count="3">
-      <a href="#" onClick="{{ p.open }}" style="background:#F5F5F3;border-radius:24px;padding:32px;display:grid;gap:14px;align-content:start;color:#0B1F33" style-hover="background:#EEEFEC;color:#0B1F33">
-        <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F26B0F">{{ p.tag }} · {{ p.date }}</span>
-        <h3 style="font-size:24px;font-weight:800">{{ p.title }}</h3>
-        <p style="font-size:15.5px;line-height:1.6;color:#5A6673;font-weight:500">{{ p.excerpt }}</p>
-        <span style="font-weight:700;font-size:15px;margin-top:6px">{{ p.readTime }} · Read →</span>
-      </a>
-    </sc-for>
-  </div>
-</section>
-
-<!-- Post reader -->
-<sc-if value="{{ hasOpen }}" hint-placeholder-val="{{ false }}">
-  <section id="post-1" data-screen-label="Post" style="background:#F5F5F3;padding:96px 24px 120px;scroll-margin-top:40px">
-    <article style="max-width:720px;margin:0 auto;display:grid;gap:28px">
-      <button onClick="{{ close }}" style="justify-self:start;background:none;border:1.5px solid #E3E5E8;border-radius:999px;padding:9px 16px;font-size:14px;font-weight:700;cursor:pointer;color:#3C4854" style-hover="border-color:#0B1F33;color:#0B1F33">← All posts</button>
-      <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#F26B0F">{{ open.tag }} · {{ open.date }} · {{ open.readTime }}</span>
-      <h2 style="font-size:clamp(32px,4.2vw,56px);font-weight:800">{{ open.title }}</h2>
-      <p style="font-size:19px;line-height:1.55;color:#5A6673;font-weight:500">{{ open.excerpt }}</p>
-      <div style="display:grid;gap:20px;font-size:17px;line-height:1.7;color:#2B3946;border-top:1px solid #E3E5E8;padding-top:28px">
-        <sc-for list="{{ open.body }}" as="para" hint-placeholder-count="4"><p>{{ para }}</p></sc-for>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid #E3E5E8;padding-top:28px">
-        <a href="solution.html" style="background:#0B1F33;color:#fff;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;white-space:nowrap" style-hover="background:#F26B0F;color:#fff">See the solution</a>
-        <a href="about.html#quote" style="border:1.5px solid #D9DCE0;padding:14px 24px;border-radius:999px;font-weight:700;font-size:15px;white-space:nowrap" style-hover="border-color:#0B1F33">Ask a question</a>
-      </div>
-    </article>
-  </section>
-</sc-if>
-
-<footer style="background:#fff;padding:24px 24px 48px">
-  <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border-top:1px solid #ECEDEE;padding-top:28px;font-size:14px;color:#8A939D;font-weight:500">
-    <img src="assets/logo-transparent.png" alt="MoorSafe" style="height:22px">
-    <div style="display:flex;gap:24px;flex-wrap:wrap">
-      <a href="index.html" style="color:#5A6673">Home</a>
-      <a href="solution.html#video" style="color:#5A6673">The Solution</a>
-      <a href="about.html" style="color:#5A6673">About</a>
-      <a href="blog.html" style="color:#5A6673">Blog</a>
-      <a href="mailto:{{ contactEmail }}" style="color:#5A6673">{{ contactEmail }}</a>
-    </div>
-    <span>© {{ year }} MoorSafe · Patent pending · In memory of Capt. Gregory Smith</span>
+    <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© 2026 MoorSafe · Designed and made in Maine, USA · Patent pending</span><span>In memory of Capt. Gregory Smith, 1988–2025</span></div>
   </div>
 </footer>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;checkout.html&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Purchase&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
-class Component extends DCLogic {
-  state = { openId: null };
-  componentDidMount() { document.querySelectorAll("video").forEach(v => { v.muted = true; v.playsInline = true; v.play().catch(() => {}); }); }
-  renderVals() {
-    const data = [
-      { id: 1, tag: 'Testing', date: 'Sep 2026', readTime: '4 min', title: 'What 40,657 pounds looks like: inside the Yale Cordage tensile test',
-        excerpt: 'We put a 300 lb traditional mushroom and a 300 lb MoorSafe prototype on a 100-foot test bed and pulled until something broke. Here is what happened.',
-        body: ['Yale Cordage in Saco runs a horizontal tensile bed rated to 1.3 million pounds. It is the kind of machine built for ship hawsers, not mooring anchors, which is exactly why we wanted it — no question about whether the rig was the limit.', 'Both anchors were rigged identically: shackle to the top eye, rope loop to the crosshead, load increased steadily. The traditional mushroom fractured at the stem at 38,560 lb. The MoorSafe prototype held to 40,657 lb before its three stem joints dislocated.', 'A 5% margin is not the headline. The headline is that adding the bars did not weaken the anchor — the most common question we get from harbormasters — and the failure mode moved away from the single stem, which is the part that fails in the field.', 'Full method and photos are in the info packet.'] },
-      { id: 2, tag: 'Field test', date: 'Aug 2026', readTime: '3 min', title: '28 days on the bottom of Casco Bay',
-        excerpt: 'Two anchors, one muddy seabed, a lobster boat, and a diver. Why MoorSafe came up fully buried — and why that matters more than the breakout number.',
-        body: ['We set both anchors on the same soft bottom and left them alone for 28 days. Then a diver went down before the pull. The traditional mushroom was partially buried with the stem exposed. The MoorSafe anchor was fully buried.', 'Breakout at 3:1 scope, read on a 4,000 lb digital indicator: 1,575 lb for the traditional anchor, 1,295 lb for MoorSafe. Comparable — and the deeper anchor keeps gaining as sediment consolidates above it. A mushroom that has stopped sinking has stopped improving.', 'The other thing the diver noted: no chain on the MoorSafe stem. Twenty-eight days of tide had wrapped nothing.'] },
-      { id: 3, tag: 'Harbor practice', date: 'Jul 2026', readTime: '3 min', title: 'Why a swivel doesn\'t stop chain wrap',
-        excerpt: 'Swivels and bridles reduce twist in the chain. They do nothing about the vertical post the chain wraps around.',
-        body: ['Every season someone tells us they solved chain wrap with a swivel. They reduced it — for a while. A swivel lets the chain unwind itself above the swivel. Below it, on the anchor side, the stem is still a vertical post and the chain still rotates around it as the boat swings.', 'The wrap forms where the swivel cannot reach. That is why the fix has to be on the anchor: remove the catch point and there is nothing for the chain to do but slide off.'] },
-      { id: 4, tag: 'Company', date: 'Jun 2026', readTime: '2 min', title: 'In memory of Captain Gregory Smith',
-        excerpt: 'MoorSafe exists because Greg spent twenty years watching chain wrap ruin seasons and knew exactly what the fix had to look like.',
-        body: ['Captain Gregory Smith, 1988–2025. Maine Maritime Academy graduate, captain of unlimited-tonnage vessels in worldwide trade, and two decades in mooring service work along the Maine coast.', 'The three-bar cone was his idea, sketched from the deck of a service boat. We build every anchor the way he would have wanted it built.'] }
-    ];
-    const posts = data.map(p => ({ ...p, open: (e) => { e.preventDefault(); this.setState({ openId: p.id }); setTimeout(() => { const el = document.getElementById('post-1'); if (el) window.scrollTo({ top: el.offsetTop - 40, behavior: 'smooth' }); }, 50); } }));
-    const open = posts.find(p => p.id === this.state.openId) || null;
-    return {
-      posts, rest: posts.slice(1), open, hasOpen: !!open,
-      close: () => this.setState({ openId: null }),
-      checkoutUrl: this.props.checkoutUrl ?? 'checkout.html',
-      contactEmail: this.props.contactEmail ?? 'hello@moorsafe.com',
-      year: new Date().getFullYear()
-    };
-  }
-}
-</script>
-<script>
-/* Pages render client-side, so the browser's native #hash jump fires before the target exists. Re-jump once it does. */
-(function(){
-  function go(){
-    var id=decodeURIComponent(location.hash.slice(1)); if(!id) return true;
-    var el=document.getElementById(id); if(!el) return false;
-    var y=el.getBoundingClientRect().top+window.pageYOffset-(parseInt(getComputedStyle(el).scrollMarginTop)||0);
-    window.scrollTo({top:y,behavior:'instant'}); return true;
-  }
-  var tries=0,t=setInterval(function(){ if(go()||++tries>40) clearInterval(t); },100);
-  window.addEventListener('load',function(){setTimeout(go,300);});
-  window.addEventListener('hashchange',go);
-})();
-</script>
+<script>window.MOORSAFE={"email":"hello@moorsafe.com","prices":{"300":1895,"400":2295,"500":2695},"formEndpoint":"","paymentEndpoint":""};</script>
+<script src="/assets/site.js?v=ac6029e4" defer></script>
 </body>
 </html>
