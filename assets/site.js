@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   var C = window.MOORSAFE || {};
-  var PRICES = C.prices || { 300: 1895, 400: 2295, 500: 2695 };
+  var PRICES = C.prices || {};
   var TITLES = { 300: 'Boats up to ~30 ft', 400: 'Boats ~30–40 ft', 500: 'Boats 40 ft+ or exposed harbors' };
   var money = function (n) { return '$' + Number(n).toLocaleString('en-US'); };
   var $ = function (s, r) { return (r || document).querySelector(s); };

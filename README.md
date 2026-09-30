@@ -29,7 +29,7 @@ Its prices are still typed inside that file; keep them in sync with `site.config
 
 ## Going live checklist
 
-- `prices` in `site.config.json` are the numbers currently published. Confirm them.
+- The site is quote-only and single-size: one 400 lb anchor, no prices shown. `purchase: false` hides Buy buttons and the checkout page; `showPrices: false` makes the build fail if a dollar amount appears on any page. The old 3-size checkout fragment is kept in `src/pages/checkout.html` and needs updating before `purchase` is turned back on.
 - `formEndpoint`: a form service URL (for example a Formspree endpoint). Until set, forms open the visitor's email app.
 - `paymentEndpoint`: a server route that creates a Stripe Checkout session from `{ size, quantity }` and returns `{ url }`.
   Until set, checkout sends an order request by email and the button reads "Send order request".

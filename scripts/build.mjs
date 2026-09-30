@@ -20,7 +20,6 @@ const hash = f => crypto.createHash('md5').update(fs.readFileSync(path.join(ROOT
 const NAV = [
   { k: 'solution', label: 'The Solution', href: '/solution#video' },
   { k: 'proof', label: 'Proof', href: '/solution#tests' },
-  { k: 'pricing', label: 'Pricing', href: '/solution#buy' },
   { k: 'pros', label: 'For Pros', href: '/pros' },
   { k: 'faq', label: 'FAQ', href: '/faq' },
   { k: 'about', label: 'About', href: '/about' },
@@ -30,8 +29,8 @@ const MENU_EXTRA = [
   { k: 'contact', label: 'Contact', href: '/contact' },
 ];
 const LOCAL = {
-  index: { proof: '#proof', pricing: '#buy' },
-  solution: { solution: '#video', proof: '#tests', pricing: '#buy' },
+  index: { proof: '#proof' },
+  solution: { solution: '#video', proof: '#tests' },
 };
 const navHtml = (active, name) => {
   const loc = LOCAL[name] || {};
@@ -118,9 +117,8 @@ const orgNode = () => ({
 });
 const productNode = () => ({
   '@type': 'Product', '@id': SITE + '/#product', name: 'MoorSafe Mooring Anchor',
-  description: 'A mushroom mooring anchor with three symmetrical bars forming a cone above the stem, so mooring chain cannot wrap. Available in 300, 400 and 500 lb. Cast-iron base with welded steel bars. Designed and made in Maine.',
+  description: 'A mushroom mooring anchor with three symmetrical bars forming a cone above the stem, so mooring chain cannot wrap. Available in 400 lb. Cast-iron base with welded steel bars. Designed and made in Maine.',
   image: SITE + cfg.ogImage, brand: { '@id': SITE + '/#org' }, material: 'Cast iron and steel', color: 'Safety orange',
-  offers: { '@type': 'AggregateOffer', priceCurrency: 'USD', lowPrice: String(cfg.prices[300]), highPrice: String(cfg.prices[500]), offerCount: 3, url: SITE + '/solution#buy' },
 });
 const crumbNode = (pageUrl, title, extra) => {
   const items = [{ name: 'Home', url: SITE + '/' }, ...(extra || []), { name: title, url: SITE + pageUrl }];
@@ -216,6 +214,7 @@ ${footerHtml()}${mobileBar}
   if (meta.description.length < 70 || meta.description.length > 165) problems.push(`${rel}: description is ${meta.description.length} chars`);
   const noAlt = (body.match(/<img\b(?![^>]*\salt=")[^>]*>/g) || []).length; if (noAlt) problems.push(`${rel}: ${noAlt} <img> without alt`);
   if (/\{\{/.test(html)) problems.push(`${rel}: unresolved {{ }} token`);
+  if (!cfg.showPrices && /\$\s?\d/.test(html.replace(/<script[\s\S]*?<\/script>/g, ''))) problems.push(`${rel}: a dollar amount is visible but showPrices is off`);
   const out = path.join(ROOT, name + '.html');
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, html);
