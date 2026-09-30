@@ -8,6 +8,11 @@
       "permanent": true
     },
     {
+      "source": "/product",
+      "destination": "/solution",
+      "permanent": true
+    },
+    {
       "source": "/why",
       "destination": "/solution#tests",
       "permanent": true
