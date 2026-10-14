@@ -95,6 +95,8 @@ a,button{transition:color .15s,background-color .15s,border-color .15s}
 .prose h2{font-size:clamp(26px,3vw,36px);font-weight:800;margin:44px 0 14px;line-height:1.1}
 .prose p{font-size:18px;line-height:1.7;color:#3C4854;font-weight:500;margin:0 0 18px}
 .prose a{color:#0B1F33;font-weight:700;border-bottom:2px solid #F26B0F}
+.prose h3{font-size:22px;font-weight:800;margin:34px 0 8px;line-height:1.2;letter-spacing:-.02em}
+.prose blockquote{margin:22px 0;padding:20px 24px;background:#F5F5F3;border-left:4px solid #F26B0F;border-radius:12px;font-size:18px;line-height:1.65;color:#3C4854;font-weight:500}
 .crumbs{font-size:13.5px;color:#8A939D;font-weight:600}.crumbs a{color:#5A6673}.crumbs a:hover{color:#F26B0F}
 
 /* mobile buy bar (home) */
