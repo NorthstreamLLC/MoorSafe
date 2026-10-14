@@ -15,7 +15,7 @@
  * If you ever edit this script, use Deploy -> Manage deployments -> Edit -> New version,
  * otherwise the website keeps using the old code.
  */
-const NOTIFY = 'hello@moorsafe.org'; // <- who gets an email for each submission
+const NOTIFY = 'support@moorsafe.org'; // <- who gets an email for each submission
 const SHEET_NAME = 'Leads';
 
 const HEADERS = ['Time', 'Type', 'Intent', 'Name', 'Email', 'Phone', 'Role', 'Organization', 'Boat / harbor', 'Message', 'Wants updates'];

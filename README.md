@@ -34,7 +34,7 @@ Its prices are still typed inside that file; keep them in sync with `site.config
 - `paymentEndpoint`: a server route that creates a Stripe Checkout session from `{ size, quantity }` and returns `{ url }`.
   Until set, checkout sends an order request by email and the button reads "Send order request".
 - `analytics`: set `vercel` to `true` (after enabling Web Analytics in Vercel) or fill in `gaId`, then rebuild.
-- Email on the site is `hello@moorsafe.com`; the domain is `moorsafe.org`. Make sure that mailbox exists.
+- Email on the site is `support@moorsafe.org`; the domain is `moorsafe.org`. Make sure that mailbox exists.
 - In Google Search Console, add the domain, submit `https://moorsafe.org/sitemap.xml`.
 - Not yet on the site (waiting on answers): social proof, warranty, privacy policy, terms, shipping/returns policy.
 

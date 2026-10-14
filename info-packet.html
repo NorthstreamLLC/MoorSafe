@@ -164,12 +164,12 @@ img{display:block;max-width:100%}
   </section>
 </doc-page>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;hello@moorsafe.com&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;support@moorsafe.org&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;checkoutUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const url = this.props.checkoutUrl ?? '';
     return {
-      contactEmail: this.props.contactEmail ?? 'hello@moorsafe.com',
+      contactEmail: this.props.contactEmail ?? 'support@moorsafe.org',
       checkoutDisplay: url && !url.startsWith('#') && !url.endsWith('#buy') ? url : 'moorsafe.org — Buy now',
       year: new Date().getFullYear()
     };
