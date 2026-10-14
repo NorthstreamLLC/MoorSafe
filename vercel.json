@@ -3,6 +3,39 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "moorsafesolutions.com"
+        }
+      ],
+      "destination": "https://moorsafe.org/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.moorsafesolutions.com"
+        }
+      ],
+      "destination": "https://moorsafe.org/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.moorsafe.org"
+        }
+      ],
+      "destination": "https://moorsafe.org/$1",
+      "permanent": true
+    },
+    {
       "source": "/index",
       "destination": "/",
       "permanent": true

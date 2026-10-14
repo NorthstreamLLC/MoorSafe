@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MoorSafe Info Packet: Specs, Tests, Installation</title>
 <meta name="description" content="The MoorSafe info packet: specifications, sizing, test results and installation for the Maine-made mooring anchor that stops chain wrap.">
-<link rel="canonical" href="https://moorsafesolutions.com/info-packet">
+<link rel="canonical" href="https://moorsafe.org/info-packet">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0B1F33">
 <meta property="og:site_name" content="MoorSafe">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MoorSafe Info Packet: Specs, Tests, Installation">
 <meta property="og:description" content="The MoorSafe info packet: specifications, sizing, test results and installation for the Maine-made mooring anchor. Download the PDF.">
-<meta property="og:url" content="https://moorsafesolutions.com/info-packet">
-<meta property="og:image" content="https://moorsafesolutions.com/assets/og-image.png">
+<meta property="og:url" content="https://moorsafe.org/info-packet">
+<meta property="og:image" content="https://moorsafe.org/assets/og-image.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MoorSafe Info Packet: Specs, Tests, Installation">
 <meta name="twitter:description" content="Specifications, sizing, test results and installation for the Maine-made MoorSafe mooring anchor.">
-<meta name="twitter:image" content="https://moorsafesolutions.com/assets/og-image.png">
+<meta name="twitter:image" content="https://moorsafe.org/assets/og-image.png">
 <script src="/support.js"></script>
 <style>
 .pk-bar{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 20px;background:#0B1D2E;color:#fff;font-family:'IBM Plex Sans',system-ui,sans-serif;font-size:14px;font-weight:600;box-shadow:0 2px 16px rgba(0,0,0,.25)}
@@ -31,7 +31,7 @@ body{padding-top:56px}
 </style>
 </head>
 <body>
-<div class="pk-bar"><a class="pk-back" href="/">← moorsafesolutions.com</a><a class="pk-dl" href="/assets/MoorSafe-Info-Packet.pdf" download="MoorSafe-Info-Packet.pdf">↓ Download PDF</a></div>
+<div class="pk-bar"><a class="pk-back" href="/">← moorsafe.org</a><a class="pk-dl" href="/assets/MoorSafe-Info-Packet.pdf" download="MoorSafe-Info-Packet.pdf">↓ Download PDF</a></div>
 <x-dc>
 <helmet>
 <title>MoorSafe Info Packet</title>
@@ -154,9 +154,9 @@ img{display:block;max-width:100%}
       <span style="font-family:'IBM Plex Mono',monospace;font-size:8.5pt;letter-spacing:.12em;text-transform:uppercase;opacity:.9">Next steps</span>
       <h2 style="font-size:18pt;font-weight:900">Put a MoorSafe on your mooring this season.</h2>
       <div style="display:grid;gap:5pt;font-size:10.5pt;line-height:1.45">
-        <div><strong>Request a quote:</strong> moorsafesolutions.com/contact</div>
+        <div><strong>Request a quote:</strong> moorsafe.org/contact</div>
         <div><strong>Quote or questions:</strong> {{ contactEmail }}</div>
-        <div><strong>Web:</strong> moorsafesolutions.com</div>
+        <div><strong>Web:</strong> moorsafe.org</div>
       </div>
       <p style="font-size:9pt;opacity:.9;line-height:1.45">Harbormasters and mooring services: ask about fleet pricing and association presentations.</p>
     </div>
@@ -169,7 +169,7 @@ class Component extends DCLogic {
     const url = this.props.checkoutUrl ?? '';
     return {
       contactEmail: this.props.contactEmail ?? 'hello@moorsafe.com',
-      checkoutDisplay: url && !url.startsWith('#') && !url.endsWith('#buy') ? url : 'moorsafesolutions.com — Buy now',
+      checkoutDisplay: url && !url.startsWith('#') && !url.endsWith('#buy') ? url : 'moorsafe.org — Buy now',
       year: new Date().getFullYear()
     };
   }
