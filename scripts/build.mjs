@@ -155,8 +155,9 @@ ${m.ogImage ? '' : '<meta property="og:image:width" content="1200"><meta propert
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
 <meta name="twitter:image" content="${og}">
-${m.ogType === 'article' ? `<meta property="article:published_time" content="${m.published}">\n` : ''}<link rel="icon" href="/assets/favicon.png" type="image/png" sizes="512x512">
-<link rel="apple-touch-icon" href="/assets/favicon.png">
+${m.ogType === 'article' ? `<meta property="article:published_time" content="${m.published}">\n` : ''}<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">

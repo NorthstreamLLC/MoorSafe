@@ -11,7 +11,7 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 
 http.createServer((req, res) => {
   let p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
   if (p.endsWith('/') && p.length > 1) p = p.slice(0, -1);
-  if (p === '/favicon.ico') p = '/assets/favicon.png';
+  if (p === '/favicon.ico') p = '/assets/favicon-192.png';
   const cands = p === '/' ? ['index.html'] : [p.slice(1), p.slice(1) + '.html', p.slice(1) + '/index.html'];
   const file = cands.map(c => path.join(ROOT, c)).find(f => f.startsWith(ROOT) && fs.existsSync(f) && fs.statSync(f).isFile());
   if (!file) { res.writeHead(404, { 'Content-Type': 'text/html' }); res.end(fs.existsSync(path.join(ROOT, '404.html')) ? fs.readFileSync(path.join(ROOT, '404.html')) : 'Not found'); return; }

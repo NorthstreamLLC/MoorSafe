@@ -1,8 +1,12 @@
 <!doctype html>
+<!-- Renders assets/favicon-192.png. Usage: open with ?apple=1 for the square apple-touch-icon (180px, no rounded corners). -->
 <html><head><meta charset="utf-8">
-<style>
-html,body{margin:0;width:512px;height:512px;background:transparent}
-.tile{width:512px;height:512px;background:#fff;border-radius:112px;display:grid;place-items:center;overflow:hidden}
-.tile img{height:440px;width:auto;display:block}
-</style></head>
-<body><div class="tile"><img src="../uploads/anchor-hero.jpg" alt=""></div></body></html>
+<style>html,body{margin:0;background:transparent}svg{display:block}</style></head>
+<body><script>
+var apple = /apple=1/.test(location.search), s = apple ? 180 : 192;
+var rx = apple ? 0 : 112;
+document.body.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="' + s + '" height="' + s + '">' +
+  '<rect width="512" height="512" rx="' + rx + '" fill="#F26B0F"/>' +
+  '<g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"><path d="M130 372 L256 150 L382 372"/><path d="M256 150 V372"/><circle cx="256" cy="108" r="32"/></g>' +
+  '<ellipse cx="256" cy="418" rx="196" ry="44" fill="#fff"/></svg>';
+</script></body></html>

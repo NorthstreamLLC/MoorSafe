@@ -40,7 +40,7 @@ Its prices are still typed inside that file; keep them in sync with `site.config
 
 ## Assets
 
-- `assets/og-image.png` (1200×630 share card) is generated from `scripts/og.html`; `assets/favicon.png` from `scripts/favicon.html`.
+- `assets/og-image.png` (1200×630 share card) is generated from `scripts/og.html`; `assets/favicon.svg` is the master icon; `favicon-192.png` and `apple-touch-icon.png` are rendered from `scripts/favicon.html` (add `?apple=1` for the square one).
   Regenerate with Chrome headless `--screenshot` against the dev server.
 - `uploads/video_water.mp4` (39 MB) is the home hero and `uploads/hero-video.mp4` / `anchor-loop.mp4` are 13-15 MB each.
   Compressing them (target 3-5 MB each) is the biggest remaining page-speed win.

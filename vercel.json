@@ -119,7 +119,7 @@
   "rewrites": [
     {
       "source": "/favicon.ico",
-      "destination": "/assets/favicon.png"
+      "destination": "/assets/favicon-192.png"
     }
   ]
 }

@@ -7,7 +7,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pages = [];
 (function walk(d) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
-    if (['src', 'scripts', 'node_modules', '.git', 'assets', 'uploads'].includes(e.name)) continue;
+    if (['src', 'scripts', 'drafts', 'node_modules', '.git', 'assets', 'uploads'].includes(e.name)) continue;
     const p = path.join(d, e.name);
     if (e.isDirectory()) walk(p); else if (e.name.endsWith('.html')) pages.push(p);
   }
