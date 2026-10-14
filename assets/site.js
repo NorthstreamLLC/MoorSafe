@@ -108,6 +108,9 @@
   function mailto(subject, body) {
     location.href = 'mailto:' + C.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
+  function track(kind, d) {
+    if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { form_type: kind, role: d.role || '' });
+  }
   function done(form, msg) {
     var m = $('[data-form-msg]', form);
     if (m) { m.textContent = msg; m.hidden = false; }
@@ -139,6 +142,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var d = fieldsOf(form), subject, body, payload;
+      track(kind, d);
 
       if (kind === 'order') {
         var unit = PRICES[state.size];

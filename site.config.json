@@ -7,7 +7,9 @@
   "purchase": false,
   "formEndpoint": "",
   "paymentEndpoint": "",
-  "analytics": { "vercel": false, "gaId": "" },
+  "analytics": {
+    "vercel": false,
+    "gaId": "G-QX12M9MDHH"
+  },
   "ogImage": "/assets/og-image.png"
 }
-
