@@ -113,6 +113,11 @@
     if (m) { m.textContent = msg; m.hidden = false; }
   }
   function post(url, data) {
+    /* Google Apps Script web app (Google Sheets form): text/plain avoids a CORS preflight; the reply is opaque,
+       so a request that completes without a network error counts as sent. */
+    if (/script\.google(usercontent)?\.com/.test(url)) {
+      return fetch(url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+    }
     return fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
       .then(function (r) { if (!r.ok) throw new Error('bad status'); return r; });
   }

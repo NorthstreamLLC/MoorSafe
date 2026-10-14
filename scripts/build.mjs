@@ -53,12 +53,12 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
         <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/chain-wrap" style="color:#5A6673">Chain Wrap</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
       </nav>
     </div>
-    <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© ${year} MoorSafe · Designed and made in Maine, USA · Patent pending</span><span>In memory of Capt. Gregory Smith, 1988–2025</span></div>
+    <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© ${year} MoorSafe · Designed and made in Maine, USA · Patent pending</span><span><a href="/privacy" style="color:#8A939D">Privacy</a> · <a href="/terms" style="color:#8A939D">Terms</a> · In memory of Capt. Gregory Smith, 1988–2025</span></div>
   </div>
 </footer>`;
 
 /* ---------- fragments ---------- */
-const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
+const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'privacy.html': '/privacy', 'terms.html': '/terms', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
 const sizeRows = () => [300, 400, 500].map((w, i) => {
   const t = { 300: 'Boats up to ~30 ft', 400: 'Boats ~30–40 ft', 500: 'Boats 40 ft+ or exposed harbors' }[w];
   return `<button type="button" class="size-row${i === 0 ? ' is-on' : ''}" data-size="${w}" aria-pressed="${i === 0}"><span class="sz-l"><span class="sz-w">${w} lb</span><span class="sz-t">${t}</span></span><span class="sz-r"><span class="sz-p">${money(cfg.prices[w])}</span><span class="sz-dot" aria-hidden="true"></span></span></button>`;
