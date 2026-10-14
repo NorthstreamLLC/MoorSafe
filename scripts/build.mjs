@@ -118,11 +118,6 @@ const orgNode = () => ({
   address: { '@type': 'PostalAddress', addressRegion: 'ME', addressCountry: 'US' },
   founder: [{ '@type': 'Person', name: 'Scott Karkos' }, { '@type': 'Person', name: 'Captain Gregory Smith' }],
 });
-const productNode = () => ({
-  '@type': 'Product', '@id': SITE + '/#product', name: 'MoorSafe Mooring Anchor',
-  description: 'The MoorSafe 400 lb mooring anchor, designed to help prevent chain wrap for safer boating. Cast-iron base with welded steel bars. Designed and made in Maine.',
-  image: SITE + cfg.ogImage, brand: { '@id': SITE + '/#org' }, material: 'Cast iron and steel', color: 'Safety orange',
-});
 const crumbNode = (pageUrl, title, extra) => {
   const items = [{ name: 'Home', url: SITE + '/' }, ...(extra || []), { name: title, url: SITE + pageUrl }];
   return { '@type': 'BreadcrumbList', itemListElement: items.map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name, item: it.url })) };
@@ -134,9 +129,9 @@ function headHtml(m, url, css, js) {
   const title = esc(m.title), desc = esc(m.description);
   const og = SITE + (m.ogImage || cfg.ogImage);
   const graph = [];
-  if (url === '/') graph.push(orgNode(), { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE + '/', name: 'MoorSafe', publisher: { '@id': SITE + '/#org' } }, productNode());
+  if (url === '/') graph.push(orgNode(), { '@type': 'WebSite', '@id': SITE + '/#website', url: SITE + '/', name: 'MoorSafe', publisher: { '@id': SITE + '/#org' } });
   else graph.push({ ...orgNode() });
-  for (const s of m.schema || []) graph.push(s === 'product' ? productNode() : s);
+  for (const s of m.schema || []) graph.push(s);
   if (url !== '/' && !m.noCrumbs) graph.push(crumbNode(url, m.crumb || m.title.split(' | ')[0].split(' — ')[0], m.crumbParents));
   const ld = tok(JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }));
   const an = cfg.analytics || {};
