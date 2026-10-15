@@ -25,6 +25,7 @@ const LEARN = [
   { k: 'chainwrap', label: 'Chain Wrap', href: '/chain-wrap' },
   { k: 'proof', label: 'Proof', href: '/solution#tests' },
   { k: 'faq', label: 'FAQ', href: '/faq' },
+  { k: 'map', label: 'Anchors in the water', href: '/map' },
   { k: 'blog', label: 'Journal', href: '/blog' },
 ];
 const NAV_B = [{ k: 'about', label: 'About', href: '/about' }];
@@ -50,7 +51,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
     <div style="display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap">
       <a href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="103" height="22" style="height:22px;width:auto"></a>
       <nav aria-label="Footer" style="display:flex;gap:10px 24px;flex-wrap:wrap">
-        <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/chain-wrap" style="color:#5A6673">Chain Wrap</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
+        <a href="/" style="color:#5A6673">Home</a><a href="/solution" style="color:#5A6673">The Solution</a><a href="/pros" style="color:#5A6673">For Pros</a><a href="/chain-wrap" style="color:#5A6673">Chain Wrap</a><a href="/faq" style="color:#5A6673">FAQ</a><a href="/about" style="color:#5A6673">About</a><a href="/map" style="color:#5A6673">Anchors in the water</a><a href="/blog" style="color:#5A6673">Journal</a><a href="/contact" style="color:#5A6673">Contact</a><a href="/info-packet" style="color:#5A6673">Info packet</a><a href="mailto:${cfg.email}" style="color:#5A6673">${cfg.email}</a>
       </nav>
     </div>
     <div style="display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap"><span>© ${year} MoorSafe · Designed and made in Maine, USA · Patent pending</span><span><a href="/privacy" style="color:#8A939D">Privacy</a> · <a href="/terms" style="color:#8A939D">Terms</a> · In memory of Capt. Gregory Smith, 1988–2025</span></div>
@@ -58,7 +59,7 @@ const footerHtml = () => `<footer style="background:#fff;padding:48px 24px 56px"
 </footer>`;
 
 /* ---------- fragments ---------- */
-const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'privacy.html': '/privacy', 'terms.html': '/terms', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact' };
+const PAGE_SLUGS = { 'index.html': '/', 'solution.html': '/solution', 'about.html': '/about', 'blog.html': '/blog', 'checkout.html': '/checkout', 'chain-wrap.html': '/chain-wrap', 'privacy.html': '/privacy', 'terms.html': '/terms', 'info-packet.html': '/info-packet', 'pros.html': '/pros', 'faq.html': '/faq', 'contact.html': '/contact', 'map.html': '/map' };
 const sizeRows = () => [300, 400, 500].map((w, i) => {
   const t = { 300: 'Boats up to ~30 ft', 400: 'Boats ~30–40 ft', 500: 'Boats 40 ft+ or exposed harbors' }[w];
   return `<button type="button" class="size-row${i === 0 ? ' is-on' : ''}" data-size="${w}" aria-pressed="${i === 0}"><span class="sz-l"><span class="sz-w">${w} lb</span><span class="sz-t">${t}</span></span><span class="sz-r"><span class="sz-p">${money(cfg.prices[w])}</span><span class="sz-dot" aria-hidden="true"></span></span></button>`;
@@ -171,7 +172,7 @@ ${an.vercel ? '<script defer src="/_vercel/insights/script.js"></script>' : ''}$
 function walk(d) {
   return fs.readdirSync(d, { withFileTypes: true }).flatMap(e => e.isDirectory() ? walk(path.join(d, e.name)) : e.name.endsWith('.html') ? [path.join(d, e.name)] : []);
 }
-const css = hash('assets/site.css'), js = hash('assets/site.js');
+const css = hash('assets/site.css'), js = hash('assets/site.js'), mapJs = hash('assets/map.js');
 const pagesDir = path.join(ROOT, 'src', 'pages');
 const sitemap = [];
 const problems = [];
@@ -185,10 +186,11 @@ for (const file of walk(pagesDir)) {
   if (meta.requires === 'purchase' && !PURCHASE) { fs.rmSync(outFile, { force: true }); continue; }
   const name = rel.replace(/\.html$/, '');
   const url = meta.path || (name === 'index' ? '/' : '/' + name);
-  const body = fix(raw.slice(mm[0].length), { firstImgEager: !!meta.eagerFirstImage });
+  // Version the map script like the others, so a fix is never hidden by the one-year cache.
+  const body = fix(raw.slice(mm[0].length), { firstImgEager: !!meta.eagerFirstImage }).replace('src="/assets/map.js"', 'src="/assets/map.js?v=' + mapJs + '"');
   const active = meta.nav || name.split('/')[0];
   const mobileBar = ''; // the home page fragment carries its own #mobile-buy bar
-  const clientCfg = JSON.stringify({ purchase: PURCHASE, email: cfg.email, prices: cfg.prices, formEndpoint: cfg.formEndpoint, paymentEndpoint: cfg.paymentEndpoint });
+  const clientCfg = JSON.stringify({ purchase: PURCHASE, email: cfg.email, prices: cfg.prices, formEndpoint: cfg.formEndpoint, paymentEndpoint: cfg.paymentEndpoint, mapEndpoint: cfg.mapEndpoint });
   const html = `<!DOCTYPE html>
 <html lang="en">
 <head>

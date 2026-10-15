@@ -6,6 +6,7 @@
   "prices": {},
   "purchase": false,
   "formEndpoint": "https://crm.moorsafe.org/api/intake",
+  "mapEndpoint": "https://crm.moorsafe.org/api/public/anchors",
   "paymentEndpoint": "",
   "analytics": {
     "vercel": false,

@@ -1,0 +1,42 @@
+<!--META
+{
+ "title": "MoorSafe Anchors in the Water: Where They Are Installed",
+ "description": "A map of MoorSafe mooring anchors installed in harbors across the United States, shown approximately and with each owner's permission.",
+ "path": "/map",
+ "nav": "map",
+ "priority": "0.6",
+ "crumb": "Anchors in the water",
+ "schema": [
+  {
+   "@type": "WebPage",
+   "name": "MoorSafe anchors in the water",
+   "url": "https://moorsafe.org/map"
+  }
+ ]
+}
+-->
+<header style="background:#fff;padding:150px 24px 24px">
+  <div style="max-width:900px;margin:0 auto;display:grid;gap:16px">
+    <p class="crumbs"><a href="/">Home</a> / Anchors in the water</p>
+    <span class="eyebrow">Where we are</span>
+    <h1 style="font-size:clamp(38px,5.2vw,72px);font-weight:800;color:#0B1F33;max-width:18ch">MoorSafe anchors in the water.</h1>
+    <p class="lede">Each orange pin is a MoorSafe anchor holding a boat in a harbor. Locations are approximate, and shown with the owner's permission.</p>
+  </div>
+</header>
+<section style="background:#fff;padding:8px 24px 120px">
+  <div style="max-width:900px;margin:0 auto;display:grid;gap:18px">
+    <div class="map-frame">
+      <div id="usmap" role="region" aria-label="Map of the United States showing where MoorSafe anchors are installed"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px 24px;flex-wrap:wrap">
+      <p id="map-count" role="status" style="font-size:18px;font-weight:800;color:#0B1F33"></p>
+      <p id="map-note" style="font-size:14.5px;line-height:1.5;color:#5A6673;font-weight:500;max-width:52ch">Pins are placed within about a mile of the real spot, with only a general place name and the year.</p>
+    </div>
+    <div style="margin-top:28px;background:#0B1F33;color:#fff;border-radius:28px;padding:clamp(28px,4vw,44px);display:grid;gap:16px">
+      <h2 style="font-size:clamp(26px,3vw,36px);font-weight:800;color:#fff">Want one on your mooring?</h2>
+      <p style="font-size:17px;line-height:1.55;color:rgba(255,255,255,.75);font-weight:500">Tell us about your harbor and we will help you decide if the MoorSafe 400 lb is the right fit.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="/contact">Request a quote</a><a href="/solution" style="color:#fff;border:1px solid rgba(255,255,255,.4);padding:16px 26px;border-radius:999px;font-weight:700;font-size:16px" class="h-bw">See how it works</a></div>
+    </div>
+  </div>
+</section>
+<script src="/assets/map.js" defer></script>

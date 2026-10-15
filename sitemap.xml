@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://moorsafe.org/</loc><priority>1.0</priority></url>
   <url><loc>https://moorsafe.org/faq</loc><priority>0.8</priority></url>
+  <url><loc>https://moorsafe.org/map</loc><priority>0.6</priority></url>
   <url><loc>https://moorsafe.org/blog</loc><priority>0.6</priority></url>
   <url><loc>https://moorsafe.org/pros</loc><priority>0.8</priority></url>
   <url><loc>https://moorsafe.org/about</loc><priority>0.6</priority></url>
