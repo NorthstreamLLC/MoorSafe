@@ -5,7 +5,7 @@
   "showPrices": false,
   "prices": {},
   "purchase": false,
-  "formEndpoint": "https://script.google.com/macros/s/AKfycbyKV20dRl6iMSZkKAl4C_qiKi8a4vsJrOEHaZaui9yAnc1NSO-Iu8TDlg4ulGpNdBd6ww/exec",
+  "formEndpoint": "https://crm.moorsafe.org/api/intake",
   "paymentEndpoint": "",
   "analytics": {
     "vercel": false,
