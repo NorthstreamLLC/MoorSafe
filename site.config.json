@@ -9,7 +9,7 @@
   "mapEndpoint": "https://crm.moorsafe.org/api/public/anchors",
   "paymentEndpoint": "",
   "analytics": {
-    "vercel": false,
+    "vercel": true,
     "gaId": "G-QX12M9MDHH"
   },
   "ogImage": "/assets/og-image.png"

@@ -40,7 +40,7 @@ for (const f of pages) {
   // links
   for (const m of html.matchAll(/(?:href|src|poster)="([^"]+)"/g)) {
     const u = m[1];
-    if (/^(https?:|mailto:|tel:|data:|javascript:)/.test(u)) continue;
+    if (/^(https?:|mailto:|tel:|data:|javascript:)/.test(u) || u.startsWith('/_vercel/')) continue; // /_vercel/* is served by Vercel itself
     if (u.startsWith('#')) { if (u.length > 1 && !idsOf(f).has(u.slice(1))) errs.push(`${rel}: missing anchor ${u}`); continue; }
     if (!u.startsWith('/')) { errs.push(`${rel}: relative URL ${u}`); continue; }
     const target = urlToFile(u);
