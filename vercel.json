@@ -11,7 +11,7 @@
         }
       ],
       "destination": "https://moorsafe.org/$1",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/(.*)",
@@ -22,7 +22,7 @@
         }
       ],
       "destination": "https://moorsafe.org/$1",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/index",
