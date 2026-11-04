@@ -40,7 +40,7 @@ const navHtml = (active, name) => {
   const a = l => `<a href="${loc[l.k] || l.href}"${l.k === active ? ' aria-current="page"' : ''}>${l.label}</a>`;
   const learnOn = LEARN.some(l => l.k === active);
   return `<nav class="nv" aria-label="Main"><div class="nv-pill">
-  <a class="nv-logo" href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="120" height="26"></a>
+  <a class="nv-logo" href="/" aria-label="MoorSafe home"><img src="/assets/logo-transparent.png" alt="MoorSafe" width="107" height="34"></a>
   <div class="nv-links">${NAV_A.map(a).join('')}<details class="nv-dd${learnOn ? ' is-current' : ''}"><summary>Learn</summary><div class="nv-dd-menu">${LEARN.map(a).join('')}</div></details>${NAV_B.map(a).join('')}</div>
   <details class="nv-menu"><summary>Menu</summary><div class="nv-drop">${NAV_A.map(a).join('')}<details class="nv-sub"${learnOn ? ' open' : ''}><summary>Learn</summary><div class="nv-sub-list">${LEARN.map(a).join('')}</div></details>${NAV_B.map(a).join('')}${MENU_EXTRA.map(a).join('')}</div></details>
   <a class="nv-buy" href="${CTA_HREF}">${CTA_LABEL}</a>

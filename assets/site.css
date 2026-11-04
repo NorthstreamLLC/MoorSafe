@@ -30,7 +30,7 @@ a,button{transition:color .15s,background-color .15s,border-color .15s}
 /* nav */
 .nv{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:16px 24px;pointer-events:none}
 .nv-pill{pointer-events:auto;width:100%;max-width:1200px;display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:999px;padding:8px 10px 8px 20px;box-shadow:0 1px 0 rgba(11,31,51,.06),0 12px 40px rgba(11,31,51,.10)}
-.nv-logo{display:flex;align-items:center;flex:none}.nv-logo img{height:26px;width:auto}
+.nv-logo{display:flex;align-items:center;flex:none}.nv-logo img{height:34px;width:auto;filter:contrast(1.18) brightness(.88)}
 .nv-links{display:flex;gap:26px;align-items:center;font-size:15px;font-weight:600;white-space:nowrap}
 .nv-links a{color:#3C4854}.nv-links a:hover,.nv-links a[aria-current="page"]{color:#F26B0F}
 .nv-buy{background:#0B1F33;color:#fff;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap;flex:none}.nv-buy:hover{background:#F26B0F;color:#fff}
@@ -46,7 +46,7 @@ a,button{transition:color .15s,background-color .15s,border-color .15s}
 .nv-sub-list{display:grid;gap:2px;margin:0 0 6px 12px;padding-left:10px;border-left:2px solid #E3E5E8}
 .nv-sub-list a{padding:10px 14px;font-size:14.5px}
 @media (max-width:900px){.nv-links{display:none}.nv-menu{display:block;position:static}.nv-pill{position:relative}.nv-drop{left:0;right:0;min-width:0;top:calc(100% + 10px);max-height:calc(100vh - 100px);overflow-y:auto}}
-@media (max-width:480px){.nv{padding:12px}.nv-pill{padding:6px 8px 6px 16px}.nv-logo img{height:22px}.nv-buy{padding:9px 16px;font-size:13px}}
+@media (max-width:480px){.nv{padding:12px}.nv-pill{padding:6px 8px 6px 16px}.nv-logo img{height:28px}.nv-buy{padding:9px 16px;font-size:13px}}
 
 /* nav "Learn" dropdown */
 .nv-dd{position:relative}
