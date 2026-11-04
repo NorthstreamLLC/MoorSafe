@@ -88,8 +88,8 @@
         L.marker([p.lat, p.lng], { icon: icon, title: p.label, alt: p.label + ' (approximate location)' }).bindPopup(popup(p)).addTo(layer);
       });
       var n = points.length;
-      say(countEl, n === 1 ? '1 MoorSafe anchor in the water' : n + ' MoorSafe anchors in the water');
-      if (n === 0) say(noteEl, 'The first MoorSafe anchors are going into the water. Check back soon.');
+      say(countEl, n === 0 ? 'No anchors on the map yet' : n === 1 ? '1 MoorSafe anchor in the water' : n + ' MoorSafe anchors in the water');
+      if (n === 0) say(noteEl, 'Anchors appear here once they are installed, with the owner’s permission. Check back as the first ones go in.');
     });
   }
 
