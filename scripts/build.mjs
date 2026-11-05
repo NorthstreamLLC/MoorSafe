@@ -115,7 +115,8 @@ function fix(html, { firstImgEager }) {
 const orgNode = () => ({
   '@type': 'Organization', '@id': SITE + '/#org', name: 'MoorSafe', url: SITE + '/', email: cfg.email,
   logo: { '@type': 'ImageObject', url: SITE + '/assets/logo-transparent.png' },
-  description: 'MoorSafe makes the mooring anchor for safer boating: a Maine-made anchor designed to help prevent chain wrap.',
+  image: [SITE + '/assets/anchor-square.jpg', SITE + cfg.ogImage],
+  description: 'MoorSafe makes the mooring anchor for safer boating: a Maine-made anchor with a three-bar cone that significantly reduces the risk of chain wrap.',
   address: { '@type': 'PostalAddress', addressRegion: 'ME', addressCountry: 'US' },
   founder: [{ '@type': 'Person', name: 'Scott Karkos' }, { '@type': 'Person', name: 'Captain Gregory Smith' }],
 });
@@ -151,7 +152,8 @@ function headHtml(m, url, css, js) {
 <meta property="og:url" content="${canon}">
 <meta property="og:image" content="${og}">
 ${m.ogImage ? '' : '<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">'}
-<meta property="og:image:alt" content="${esc(m.ogAlt || 'The MoorSafe mooring anchor, built to help prevent chain wrap for safer boating')}">
+<meta property="og:image:alt" content="${esc(m.ogAlt || 'The MoorSafe mooring anchor, built to resist chain wrap for safer boating')}">
+${m.ogImage ? '' : `<meta property="og:image" content="${SITE}/assets/anchor-square.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="1200">`}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${title}">
 <meta name="twitter:description" content="${desc}">
