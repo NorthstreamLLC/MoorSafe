@@ -31,7 +31,7 @@
     },
     {
       "source": "/product",
-      "destination": "/solution",
+      "destination": "/mushroom-mooring-anchor",
       "permanent": true
     },
     {
